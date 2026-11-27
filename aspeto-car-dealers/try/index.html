@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0A0B0D">
+<title>Try it with your car · Aspeto</title>
+<meta name="description" content="Paste your car listing link. We send back your car shot like a studio, free, within 48 hours.">
+<meta property="og:title" content="See your car shot like a studio. Free.">
+<meta property="og:description" content="Paste your listing link. We send back the studio version of your car within 48 hours.">
+<meta property="og:image" content="https://provrsferreira-ops.github.io/demos/aspeto-car-dealers/frente34.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0A0B0D;--bg2:#131519;--bg3:#1B1E23;--line:#272A31;--ink:#F4F4F2;--mut:#A0A4AB;--red:#E0302F;--red2:#FF5A3C;--gold:#F5C451;--wa:#25D366}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:-20% -20% auto;height:70vh;z-index:-1;background:radial-gradient(50% 50% at 50% 0%,rgba(224,48,47,.2),transparent 70%)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;letter-spacing:-.025em;line-height:1.05}
+.grad{background:linear-gradient(90deg,var(--red),var(--red2) 55%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{max-width:1080px;margin:0 auto;padding:18px 18px 60px}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:34px}
+header img{height:24px}
+header a{color:var(--mut);font-size:14px;text-decoration:none}
+.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--red2);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
+.eyebrow::before{content:"";width:20px;height:1.5px;background:currentColor}
+h1{font-size:clamp(36px,6vw,60px);margin-bottom:14px}
+.lead{color:var(--mut);font-size:17px;margin-bottom:22px;max-width:520px}
+.in{opacity:0;transform:translateY(18px);animation:up .9s forwards}
+@keyframes up{to{opacity:1;transform:none}}
+
+/* demo visual */
+.vis{position:relative;border-radius:26px;padding:2px;background:conic-gradient(from var(--a),var(--red),var(--gold),var(--red2),#3a1010,var(--red));animation:spin 6s linear infinite,up 1s .3s forwards;opacity:0}
+@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes spin{to{--a:360deg}}
+.vis::after{content:"";position:absolute;inset:-30px;z-index:-1;border-radius:50px;background:radial-gradient(60% 60% at 50% 50%,rgba(224,48,47,.35),transparent 70%);filter:blur(10px)}
+.stage{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3;background:#000}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stage .after{clip-path:inset(0 0 0 var(--x,50%));}
+.stage .line{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;background:#fff;box-shadow:0 0 18px rgba(255,255,255,.8)}
+.stage .t{position:absolute;bottom:12px;font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px;background:rgba(0,0,0,.65);backdrop-filter:blur(6px)}
+.stage .t.l{left:12px}.stage .t.r{right:12px;background:var(--red)}
+
+/* form card */
+.card{background:linear-gradient(180deg,var(--bg3),var(--bg2));border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 40px 80px rgba(0,0,0,.45)}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:#0f1114;border:1px solid var(--line);border-radius:999px;padding:4px;margin-bottom:16px;position:relative}
+.tabs button{position:relative;z-index:1;border:0;background:none;color:var(--mut);font:700 14px Inter,sans-serif;padding:11px 6px;border-radius:999px;cursor:pointer;transition:color .3s}
+.tabs .pill{position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:linear-gradient(135deg,var(--red),var(--red2));transition:transform .45s cubic-bezier(.3,1.35,.5,1)}
+.tabs.photos .pill{transform:translateX(100%)}
+.tabs button.act{color:#fff}
+label{display:block;font-size:13px;font-weight:600;color:#C9CCD1;margin:12px 0 6px}
+input,select{width:100%;background:#0f1114;border:1px solid var(--line);border-radius:14px;padding:14px;color:var(--ink);font:500 16px Inter,sans-serif;outline:none;transition:border-color .2s,box-shadow .2s}
+input:focus,select:focus{border-color:var(--red2);box-shadow:0 0 0 4px rgba(255,90,60,.15)}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.photoinfo{display:none;background:#0f1114;border:1px dashed #3a3e46;border-radius:14px;padding:16px;color:var(--mut);font-size:14px}
+.photoinfo b{color:var(--ink)}
+.photos-mode .photoinfo{display:block}.photos-mode .linkfield{display:none}
+.err{color:var(--red2);font-size:13px;margin-top:8px;min-height:18px}
+.btn{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;margin-top:6px;border:0;cursor:pointer;background:linear-gradient(135deg,var(--red),var(--red2));color:#fff;text-decoration:none;font:700 17px Inter,sans-serif;padding:17px;border-radius:999px;box-shadow:0 12px 30px rgba(224,48,47,.4)}
+.btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 3s ease-in-out infinite}
+@keyframes shine{0%,60%{left:-60%}100%{left:130%}}
+.btn svg{width:20px;height:20px}
+.fine{color:#6E727A;font-size:12px;text-align:center;margin-top:10px}
+.trust{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.trust span{font-size:12px;color:#C9CCD1;border:1px solid var(--line);border-radius:999px;padding:6px 11px;background:rgba(255,255,255,.02)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:56px}
+.step{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:20px;opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.step.show{opacity:1;transform:none}
+.step em{display:inline-grid;place-items:center;width:32px;height:32px;border-radius:10px;background:rgba(224,48,47,.15);color:var(--red2);font:800 15px Sora,sans-serif;font-style:normal;margin-bottom:12px}
+.step h3{font-size:18px;margin-bottom:6px}
+.step p{color:var(--mut);font-size:14px}
+.promise{margin-top:14px;text-align:center;color:var(--mut);font-size:14px}
+.promise b{color:var(--ink)}
+footer{text-align:center;color:#6E727A;font-size:12px;margin-top:40px}
+footer a{color:#C9CCD1}
+
+/* sent overlay */
+.sent{position:fixed;inset:0;z-index:60;display:grid;place-items:center;background:rgba(10,11,13,.85);backdrop-filter:blur(10px);opacity:0;pointer-events:none;transition:opacity .4s;padding:20px}
+.sent.show{opacity:1;pointer-events:auto}
+.sent div{max-width:380px;text-align:center;background:var(--bg2);border:1px solid var(--line);border-radius:24px;padding:28px}
+.sent .ok{width:64px;height:64px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;background:var(--wa);font-size:30px;animation:pop .6s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+.sent h3{font-size:22px;margin-bottom:8px}.sent p{color:var(--mut);font-size:14px;margin-bottom:16px}
+.sent a{color:var(--ink);font-weight:600}
+
+@media(max-width:860px){
+ .grid{grid-template-columns:1fr;gap:26px}
+ .vis{order:-1}
+ .steps{grid-template-columns:1fr}
+ h1{font-size:clamp(34px,10vw,46px)}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.in,.vis,.step{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="in"><a href="../"><img src="../aspeto.png" alt="Aspeto"></a><a href="../">How it works →</a></header>
+
+  <div class="grid">
+    <div>
+      <p class="eyebrow in" style="animation-delay:.1s">Free studio test</p>
+      <h1 class="in" style="animation-delay:.2s">See <span class="grad">your car</span><br>shot like a studio.</h1>
+      <p class="lead in" style="animation-delay:.3s">Paste the link to one of your listings. Within 48 hours we send you the studio version of that car on WhatsApp. Free. No card, no contract.</p>
+
+      <form class="card in" id="f" style="animation-delay:.45s" novalidate>
+        <div class="tabs" id="tabs">
+          <span class="pill"></span>
+          <button type="button" class="act" data-m="link">Paste a link</button>
+          <button type="button" data-m="photos">Send photos</button>
+        </div>
+        <div class="linkfield">
+          <label for="url">Your listing link</label>
+          <input id="url" type="url" inputmode="url" placeholder="dubicars.com/… or dubizzle.com/…" autocomplete="off">
+        </div>
+        <div class="photoinfo">📸 <b>Send 3–6 phone photos of one car</b> in the WhatsApp chat that opens next. Any angle, any lot. We do the rest.</div>
+        <div class="row">
+          <div><label for="dealer">Showroom name</label><input id="dealer" placeholder="e.g. Al Noor Motors" autocomplete="organization"></div>
+          <div><label for="city">City</label>
+            <select id="city"><option>Dubai</option><option>Sharjah</option><option>Ajman</option><option>Abu Dhabi</option><option>Other</option></select></div>
+        </div>
+        <p class="err" id="err" role="alert"></p>
+        <button class="btn" type="submit"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>Get my free studio photo</button>
+        <p class="fine">Opens WhatsApp with your details filled in. You just press send.</p>
+        <div class="trust"><span>⚡ Back within 48h</span><span>🚗 Same car, same plate</span><span>🔒 Your photos stay yours</span></div>
+      </form>
+    </div>
+
+    <div class="vis">
+      <div class="stage" id="stage">
+        <img class="before" src="https://cdn.easysite.pt/pub/16548/1716745/API_NCAUTO_17897454702270-0.webp" alt="A typical lot photo">
+        <img class="after" src="../frente34.jpg" alt="The same car after Aspeto">
+        <span class="line"></span>
+        <span class="t l">Lot photo</span><span class="t r">With Aspeto</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step"><em>1</em><h3>Send one car</h3><p>A listing link or a few phone photos. Takes 20 seconds.</p></div>
+    <div class="step"><em>2</em><h3>We put it in the studio</h3><p>Same car, same plate, same condition. Only the photo changes.</p></div>
+    <div class="step"><em>3</em><h3>Compare on your listing</h3><p>Use it, test it, see if buyers react. Like it? We do your whole stock.</p></div>
+  </div>
+  <p class="promise">Like the result? Your <b>next 2 cars are free too</b>. Then it's one flat monthly price for up to 20 cars.</p>
+
+  <footer>Aspeto · <a href="../">See the full offer</a></footer>
+</div>
+
+<div class="sent" id="sent"><div><div class="ok">✓</div><h3>WhatsApp is opening</h3><p>Press send in the chat and we start on your car. If WhatsApp didn't open, <a id="again" href="#">tap here</a>.</p><a href="../">Back to Aspeto</a></div></div>
+
+<script>
+{
+const WA='351917261141';
+const f=document.getElementById('f'),tabs=document.getElementById('tabs'),err=document.getElementById('err');
+let mode='link';
+tabs.querySelectorAll('button').forEach(b=>b.onclick=()=>{mode=b.dataset.m;tabs.classList.toggle('photos',mode==='photos');f.classList.toggle('photos-mode',mode==='photos');tabs.querySelectorAll('button').forEach(x=>x.classList.toggle('act',x===b));err.textContent=''});
+const p=new URLSearchParams(location.search);if(p.get('url'))document.getElementById('url').value=p.get('url');
+f.onsubmit=e=>{e.preventDefault();
+  const url=document.getElementById('url').value.trim(),dealer=document.getElementById('dealer').value.trim(),city=document.getElementById('city').value;
+  if(mode==='link'&&!/^(https?:\/\/)?[\w-]+(\.[\w-]+)+\/\S+/.test(url)){err.textContent='Paste the full link to one of your car listings.';return}
+  if(!dealer){err.textContent='Add your showroom name so we know who to send it to.';return}
+  err.textContent='';
+  const src=p.get('utm_source')?' (via '+p.get('utm_source')+')':'';
+  const msg=mode==='link'
+    ?`Hi Aspeto, I'd like my free studio photo.\n\nShowroom: ${dealer}\nCity: ${city}\nListing: ${url}${src}`
+    :`Hi Aspeto, I'd like my free studio photo. I'll send the photos of one car here.\n\nShowroom: ${dealer}\nCity: ${city}${src}`;
+  const link='https://wa.me/'+WA+'?text='+encodeURIComponent(msg);
+  document.getElementById('again').href=link;
+  document.getElementById('sent').classList.add('show');
+  if(window.fbq)fbq('track','Lead');if(window.gtag)gtag('event','generate_lead');
+  setTimeout(()=>{location.href=link},700);
+};
+// before/after slider that sweeps by itself and follows the finger
+const st=document.getElementById('stage');let user=false,t0=performance.now();
+const setX=x=>st.style.setProperty('--x',Math.max(0,Math.min(100,x))+'%');
+const sweep=t=>{if(user)return;setX(50+38*Math.sin((t-t0)/1400));requestAnimationFrame(sweep)};requestAnimationFrame(sweep);
+const drag=e=>{user=true;const r=st.getBoundingClientRect(),cx=(e.touches?e.touches[0].clientX:e.clientX);setX((cx-r.left)/r.width*100)};
+st.addEventListener('pointermove',e=>{if(e.pointerType==='mouse'||e.buttons)drag(e)});st.addEventListener('touchmove',drag,{passive:true});
+const io=new IntersectionObserver(es=>es.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('show'),i*120);io.unobserve(e.target)}}),{threshold:.2});
+document.querySelectorAll('.step').forEach(s=>io.observe(s));
+}
+</script>
+</body>
+</html>

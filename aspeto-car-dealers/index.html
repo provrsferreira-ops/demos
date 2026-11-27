@@ -238,7 +238,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 16px 110px
 <body>
 <header id="hdr">
   <img src="aspeto.png" alt="Aspeto">
-  <a class="btn sm" href="#free">Get 2 cars free</a>
+  <a class="btn sm" href="try/">Get 2 cars free</a>
 </header>
 
 <section class="hero" style="max-width:none;padding:0">
@@ -252,7 +252,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 16px 110px
     <p class="eyebrow">Aspeto for used car dealers</p>
     <h1>Your lot photos.<br><span class="grad">Studio results.</span></h1>
     <p class="lead">You keep taking phone photos on the lot. We send back the same car, shot like a showroom, checked one by one and ready for your listings. No photographer. No studio. No new app.</p>
-    <div class="acts"><a class="btn" href="#free">Get 2 cars free <span class="arrow">→</span></a><a class="btn ghost" href="#flip">See the difference</a></div>
+    <div class="acts"><a class="btn" href="try/">Get 2 cars free <span class="arrow">→</span></a><a class="btn ghost" href="#flip">See the difference</a></div>
     <p class="small">No payment, no contract. Don't like it? Just walk away.</p>
   </div>
   <div class="scroll" aria-hidden="true"></div>
@@ -362,7 +362,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 16px 110px
           <p class="per">About $20 per car · ≈ AED 1,499/month · cancel anytime</p>
         </div>
         <div class="cta">
-          <a class="btn" href="#free">Start with 2 cars free <span class="arrow">→</span></a>
+          <a class="btn" href="try/">Start with 2 cars free <span class="arrow">→</span></a>
           <a class="btn ghost" href="STRIPE_MONTHLY" data-plan="monthly">Start the monthly plan</a>
           <p class="note">Secure payment by card</p>
         </div>
@@ -405,17 +405,17 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 16px 110px
     <img src="aspeto.png" alt="Aspeto">
     <h2>Pick 2 cars.<br><span class="grad">We'll show you.</span></h2>
     <p class="lead">Send us the phone photos of any 2 cars from your stock. Within 48 hours you'll have studio photos to compare on your own listings. Free, no strings attached.</p>
-    <div class="acts"><a class="btn" href="mailto:provrsferreira@gmail.com?subject=Free%202%20cars%20%C2%B7%20Aspeto">Get my 2 cars free <span class="arrow">→</span></a></div>
+    <div class="acts"><a class="btn" href="https://wa.me/351917261141?text=Hi%20Aspeto%2C%20I%27d%20like%20my%202%20free%20cars.%20I%27ll%20send%20the%20photos%20here.">Get my 2 cars free <span class="arrow">→</span></a></div>
   </div>
 </section>
 
 <footer>Aspeto · Studio-quality car photos for dealers. Images are created from the real photos of each vehicle.</footer>
-<div class="mbar" id="mbar"><a class="btn" href="#free">Get 2 cars free <span class="arrow">→</span></a></div>
+<div class="mbar" id="mbar"><a class="btn" href="try/">Get 2 cars free <span class="arrow">→</span></a></div>
 
 <script>
 {
 // Until the Stripe link exists, the monthly button opens an email instead of a dead link.
-document.querySelectorAll('a[data-plan]').forEach(a=>{if(a.getAttribute('href').startsWith('STRIPE')){a.href='mailto:provrsferreira@gmail.com?subject='+encodeURIComponent('Aspeto · Showroom monthly plan')}});
+document.querySelectorAll('a[data-plan]').forEach(a=>{if(a.getAttribute('href').startsWith('STRIPE')){a.href='https://wa.me/351917261141?text='+encodeURIComponent('Hi Aspeto, I want to start the Showroom monthly plan.')}});
 
 const hdr=document.getElementById('hdr'),mbar=document.getElementById('mbar'),free=document.getElementById('free');
 const onScroll=()=>{const y=scrollY;hdr.classList.toggle('solid',y>40);const fr=free.getBoundingClientRect();mbar.classList.toggle('show',y>innerHeight*.7&&fr.top>innerHeight)};
