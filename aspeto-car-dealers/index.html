@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Aspeto for Car Dealers · Studio-quality photos from your lot photos</title>
-<meta property="og:title" content="Aspeto for Car Dealers">
-<meta property="og:description" content="We turn your lot photos into studio-quality car photos, ready for your listings.">
+<title>The Showroom Offer · Aspeto for Car Dealers</title>
+<meta property="og:title" content="The Showroom Offer · Aspeto">
+<meta property="og:description" content="Studio-quality photos of every car on your lot, from the phone photos you already take. First 2 cars free.">
 <meta property="og:image" content="https://provrsferreira-ops.github.io/demos/aspeto-car-dealers/frente34.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0E0F11;--bg2:#16181C;--bg3:#1D2025;--line:#2A2D33;--ink:#F2F2F0;--mut:#A3A7AE;--red:#E0302F}
+:root{--bg:#0E0F11;--bg2:#16181C;--bg3:#1D2025;--line:#2A2D33;--ink:#F2F2F0;--mut:#A3A7AE;--red:#E0302F;--green:#7CE0A3;--gold:#F5C451}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -19,245 +19,199 @@ a{color:inherit}
 h1,h2,h3{font-family:Sora,Inter,sans-serif;line-height:1.1;letter-spacing:-.015em}
 header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px clamp(16px,4vw,48px);background:rgba(14,15,17,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 header img{height:24px;display:block}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:999px;font-size:15px;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--red);color:#fff;text-decoration:none;font-weight:600;padding:14px 24px;border-radius:999px;font-size:16px;white-space:nowrap}
 .btn.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
 .eyebrow{color:var(--red);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;margin-bottom:14px}
-section{padding:clamp(48px,7vw,96px) clamp(16px,4vw,48px);max-width:1240px;margin:0 auto}
+section{padding:clamp(48px,7vw,96px) clamp(16px,4vw,48px);max-width:1180px;margin:0 auto}
 h2{font-size:clamp(28px,3.6vw,44px);margin-bottom:18px}
 .lead{color:var(--mut);font-size:clamp(16px,1.6vw,19px);max-width:640px}
+.center{text-align:center}.center .lead{margin:0 auto}
+
 .hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,64px);align-items:center;padding-top:clamp(40px,6vw,80px)}
-.hero h1{font-size:clamp(38px,5.2vw,64px);margin-bottom:20px}
+.hero h1{font-size:clamp(38px,5.2vw,62px);margin-bottom:20px}
 .hero h1 em{font-style:normal;color:var(--red)}
 .hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero .small{color:var(--mut);font-size:14px;margin-top:12px}
 .hero .img{border-radius:22px;overflow:hidden;aspect-ratio:4/3;box-shadow:0 40px 80px rgba(0,0,0,.5)}
 .hero .img img{width:100%;height:100%;object-fit:cover;display:block}
+
 .ab{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
-.ab figure{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3}
+.ab figure{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3;background:var(--bg2)}
 .ab img{width:100%;height:100%;object-fit:cover;display:block}
 .ab figcaption{position:absolute;top:14px;left:14px;padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600;background:rgba(0,0,0,.65)}
 .ab figcaption.new{background:var(--red)}
+
 .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
 .card{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:26px}
 .card .n{font-family:Sora;color:var(--red);font-size:14px;font-weight:600;margin-bottom:10px}
 .card h3{font-size:20px;margin-bottom:8px}
 .card p{color:var(--mut);font-size:15px}
 .steps .card .n{font-size:40px;line-height:1;margin-bottom:16px;font-weight:700}
-.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:32px}
-.gal div{border-radius:12px;overflow:hidden;aspect-ratio:4/3}
-.gal .big{grid-column:span 2;grid-row:span 2}
-.gal img{width:100%;height:100%;object-fit:cover;display:block}
-.honest{display:flex;gap:16px;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:14px;padding:24px 26px;color:var(--mut)}
-.honest b{color:var(--ink)}
-.cta{text-align:center;background:radial-gradient(120% 140% at 50% 0%,#2a1414 0%,var(--bg2) 55%);border:1px solid var(--line);border-radius:26px;padding:clamp(36px,6vw,72px) clamp(20px,4vw,48px)}
-.cta .lead{margin:0 auto}
-.cta .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
-.cta img{height:28px;margin:0 auto 24px;display:block}
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;align-items:stretch}
-.plan{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:30px;display:flex;flex-direction:column}
-.plan.pop{border-color:var(--red);box-shadow:0 0 0 1px var(--red),0 30px 60px rgba(224,48,47,.12);position:relative}
-.plan .badge{position:absolute;top:-13px;left:30px;background:var(--red);color:#fff;font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px}
-.plan h3{font-size:20px;margin-bottom:6px}
-.plan .sub{color:var(--mut);font-size:14px;min-height:42px}
-.plan .price{font-family:Sora;font-size:44px;font-weight:700;margin:18px 0 2px}
-.plan .price small{font-size:16px;color:var(--mut);font-weight:400}
-.plan .per{color:var(--mut);font-size:14px;margin-bottom:20px}
-.plan ul{list-style:none;margin-bottom:26px;flex:1}
-.plan li{padding:8px 0 8px 26px;border-bottom:1px solid var(--line);font-size:15px;position:relative}
-.plan li::before{content:"✓";position:absolute;left:0;color:var(--red);font-weight:700}
-.plan .btn{justify-content:center}
-.free{margin-top:18px;text-align:center;color:var(--mut);font-size:15px}
-.free a{color:var(--ink);font-weight:600}
-@media(max-width:900px){.plans{grid-template-columns:1fr}}
-.cur{display:inline-flex;background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:4px;margin-top:22px}
-.cur button{border:0;background:none;color:var(--mut);font:600 14px Inter;padding:8px 18px;border-radius:999px;cursor:pointer}
-.cur button.on{background:var(--ink);color:#111}
-.calc{margin-top:28px;background:var(--bg2);border:1px solid var(--line);border-radius:22px;padding:clamp(22px,3vw,34px);display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
-.calc label{display:block;font-family:Sora;font-size:20px;font-weight:600;margin-bottom:6px}
-.calc .q{color:var(--mut);font-size:15px;margin-bottom:22px}
-.calc .n{font-family:Sora;font-size:56px;font-weight:700;line-height:1}
-.calc .n small{font-size:18px;color:var(--mut);font-weight:400}
-.calc input[type=range]{width:100%;margin-top:18px;accent-color:var(--red);height:6px;cursor:pointer}
-.calc .ticks{display:flex;justify-content:space-between;color:var(--mut);font-size:12px;margin-top:6px}
-.res{background:var(--bg3);border:1px solid var(--line);border-radius:18px;padding:24px}
-.res .plan-name{color:var(--red);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:.12em}
-.res .total{font-family:Sora;font-size:46px;font-weight:700;margin:8px 0 2px}
-.res .total small{font-size:16px;color:var(--mut);font-weight:400}
-.res .pc{color:var(--mut);font-size:15px}
-.res .save{margin-top:12px;font-size:14px;color:#7CE0A3}
-.res .btn{margin-top:18px;width:100%;justify-content:center}
-.guar{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;margin-top:20px;background:linear-gradient(90deg,rgba(124,224,163,.08),transparent);border:1px solid rgba(124,224,163,.35);border-radius:16px;padding:20px 24px}
-.guar .seal{width:54px;height:54px;border-radius:50%;border:2px solid #7CE0A3;display:grid;place-items:center;color:#7CE0A3;font-weight:700;font-family:Sora;font-size:13px;text-align:center;line-height:1.05}
-.guar b{display:block;font-family:Sora;font-size:17px;margin-bottom:2px}
-.guar p{color:var(--mut);font-size:15px}
-.founder{display:inline-block;margin-bottom:14px;font-size:13px;font-weight:600;color:#111;background:#F5C451;border-radius:999px;padding:5px 14px}
-@media(max-width:900px){.calc{grid-template-columns:1fr}}
+
+.offer{background:var(--bg2);border:1px solid var(--red);border-radius:26px;overflow:hidden;box-shadow:0 0 0 1px var(--red),0 40px 90px rgba(224,48,47,.12);margin-top:36px}
+.offer .top{padding:clamp(24px,4vw,40px);border-bottom:1px solid var(--line);text-align:center}
+.founder{display:inline-block;margin-bottom:16px;font-size:13px;font-weight:600;color:#111;background:var(--gold);border-radius:999px;padding:5px 14px}
+.offer .top h3{font-size:clamp(26px,3vw,36px);margin-bottom:8px}
+.offer .top p{color:var(--mut)}
+.stack{list-style:none;padding:clamp(20px,3vw,36px) clamp(24px,4vw,48px)}
+.stack li{display:grid;grid-template-columns:28px 1fr;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.stack li:last-child{border-bottom:0}
+.stack li::before{content:"✓";color:var(--red);font-weight:700;font-size:18px;line-height:1.4}
+.stack li.bonus::before{content:"★";color:var(--gold)}
+.stack b{display:block;font-size:17px}
+.stack span{color:var(--mut);font-size:15px}
+.stack .tag{display:inline-block;font-size:11px;font-weight:700;color:#111;background:var(--gold);border-radius:6px;padding:1px 7px;margin-right:6px;vertical-align:2px}
+.offer .price{background:var(--bg3);padding:clamp(24px,4vw,40px);display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;border-top:1px solid var(--line)}
+.offer .amt{font-family:Sora;font-size:clamp(44px,5vw,60px);font-weight:700;line-height:1}
+.offer .amt small{font-size:18px;color:var(--mut);font-weight:400}
+.offer .per{color:var(--mut);margin-top:8px}
+.offer .cta{display:flex;flex-direction:column;gap:10px;min-width:260px}
+.offer .cta .note{color:var(--mut);font-size:13px;text-align:center}
+
+.guar{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;background:linear-gradient(90deg,rgba(124,224,163,.08),transparent);border:1px solid rgba(124,224,163,.35);border-radius:20px;padding:26px 30px;margin-top:18px}
+.seal{width:76px;height:76px;border-radius:50%;border:2px solid var(--green);display:grid;place-items:center;color:var(--green);font-weight:700;font-family:Sora;font-size:12px;text-align:center;line-height:1.1}
+.guar h3{font-size:20px;margin-bottom:6px}
+.guar p{color:var(--mut)}
+.guar p+p{margin-top:6px}
+.guar b{color:var(--ink)}
+
+.scar{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+.scar .card b{display:block;font-family:Sora;font-size:18px;margin-bottom:4px}
+
+.faq{margin-top:28px;border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--red);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{color:var(--mut);margin-top:10px;max-width:760px}
+
+.final{text-align:center;background:radial-gradient(120% 140% at 50% 0%,#2a1414 0%,var(--bg2) 55%);border:1px solid var(--line);border-radius:26px;padding:clamp(36px,6vw,72px) clamp(20px,4vw,48px)}
+.final img{height:28px;margin:0 auto 24px;display:block}
+.final .lead{margin:0 auto}
+.final .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+
 footer{text-align:center;color:var(--mut);font-size:13px;padding:32px 16px 48px;border-top:1px solid var(--line)}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
 .reveal.in{opacity:1;transform:none}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}}
-@media(max-width:640px){.ab{grid-template-columns:1fr}.gal{grid-template-columns:1fr 1fr}header .btn{padding:10px 14px;font-size:14px}}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid3{grid-template-columns:1fr}.offer .price{grid-template-columns:1fr}.offer .cta{min-width:0}.scar{grid-template-columns:1fr}}
+@media(max-width:640px){.ab{grid-template-columns:1fr}.guar{grid-template-columns:1fr}header .btn{padding:10px 14px;font-size:14px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 <header>
   <img src="aspeto.png" alt="Aspeto">
-  <a class="btn" href="#pricing">See pricing</a>
+  <a class="btn" href="#free">Get 2 cars free</a>
 </header>
 
 <section class="hero">
   <div class="reveal in">
-    <p class="eyebrow">Aspeto for car dealers</p>
-    <h1>Your cars are already good. <em>Make them look</em> as good as they are.</h1>
-    <p class="lead">Send us the photos you already take on the lot. We send back studio-quality photos of the same car, ready for Dubizzle, AutoTrader, Instagram and your website. No studio, no photographer, and the car never leaves the showroom.</p>
-    <div class="acts"><a class="btn" href="#pricing">See pricing</a><a class="btn ghost" href="#example">See an example</a></div>
+    <p class="eyebrow">For used car dealers</p>
+    <h1>Every car on your lot, looking like it was <em>shot in a studio</em>. In 48 hours.</h1>
+    <p class="lead">You keep taking phone photos on the lot. We send back studio-quality photos of the same car, checked one by one, ready for your listings. No photographer, no studio, no new app.</p>
+    <div class="acts"><a class="btn" href="#free">Get 2 cars free</a><a class="btn ghost" href="#offer">See the offer</a></div>
+    <p class="small">No payment, no contract. If you don't like the result, you just walk away.</p>
   </div>
   <div class="img reveal in"><img src="frente34.jpg" alt="Car photographed in a studio setting"></div>
 </section>
 
-<section class="reveal" id="example">
+<section class="reveal">
   <p class="eyebrow">Before and after</p>
-  <h2>Same car. A different first impression.</h2>
-  <p class="lead">On the left, the original listing photo taken on the lot. On the right, the same car after Aspeto.</p>
+  <h2>Same car. A completely different first impression.</h2>
+  <p class="lead">Buyers scroll past hundreds of lot photos. The first photo decides who gets the click, and the click decides who gets the call.</p>
   <div class="ab">
     <figure><img src="https://cdn.easysite.pt/pub/16548/1716745/API_NCAUTO_17897454702270-0.webp" alt="Original lot photo" loading="lazy"><figcaption>Original listing photo</figcaption></figure>
     <figure><img src="frente34.jpg" alt="Same car with Aspeto studio treatment" loading="lazy"><figcaption class="new">With Aspeto</figcaption></figure>
-  </div>
-  <div class="gal">
-    <div class="big"><img src="lado.jpg" alt="Side profile" loading="lazy"></div>
-    <div><img src="traseira34.jpg" alt="Rear three-quarter" loading="lazy"></div>
-    <div><img src="jante.jpg" alt="Alloy wheel" loading="lazy"></div>
-    <div><img src="interior.jpg" alt="Interior" loading="lazy"></div>
-    <div><img src="tablier.jpg" alt="Dashboard" loading="lazy"></div>
-  </div>
-</section>
-
-<section class="reveal">
-  <p class="eyebrow">Why it matters</p>
-  <h2>Buyers choose the car on their phone, before they visit you.</h2>
-  <p class="lead">On a marketplace with hundreds of similar listings, the first photo decides who gets the click.</p>
-  <div class="grid3">
-    <div class="card"><p class="n">01</p><h3>More clicks</h3><p>A studio photo stands out in a list full of lot photos with reflections, shadows and other cars in the background.</p></div>
-    <div class="card"><p class="n">02</p><h3>More trust</h3><p>Clean, consistent photos say "professional dealer, well-kept cars". Buyers arrive already convinced.</p></div>
-    <div class="card"><p class="n">03</p><h3>Less pressure on price</h3><p>A car that looks premium defends its price better. You compete on presentation, not only on discounts.</p></div>
   </div>
 </section>
 
 <section class="reveal">
   <p class="eyebrow">How it works</p>
-  <h2>Three steps. No change to your routine.</h2>
+  <h2>You send photos. We send back a showroom.</h2>
   <div class="grid3 steps">
-    <div class="card"><p class="n">1</p><h3>Shoot as usual</h3><p>Phone photos on the lot: front, sides, rear, wheels and interior.</p></div>
-    <div class="card"><p class="n">2</p><h3>Send them to us</h3><p>By WhatsApp or email. No new apps, no accounts to create.</p></div>
-    <div class="card"><p class="n">3</p><h3>Get them back ready to post</h3><p>Studio photos with your branding, sized for marketplaces and social media.</p></div>
+    <div class="card"><p class="n">1</p><h3>Shoot as usual</h3><p>Phone photos on the lot: front, sides, rear and interior. Nothing changes for your team.</p></div>
+    <div class="card"><p class="n">2</p><h3>Send them to us</h3><p>By WhatsApp or email. No app, no account, no login.</p></div>
+    <div class="card"><p class="n">3</p><h3>Post them within 48h</h3><p>Studio photos with your logo and a rewritten listing description, ready to post.</p></div>
   </div>
 </section>
 
-<section class="reveal">
-  <div class="honest"><p><b>Honesty first.</b> We only change the background and the lighting, never the car. Same wheels, same plate, same scratches, same mileage. Buyers see exactly the car they will find in your showroom.</p></div>
-</section>
+<section class="reveal" id="offer">
+  <div class="center">
+    <p class="eyebrow">The offer</p>
+    <h2>The Showroom Offer</h2>
+    <p class="lead">One plan. Everything your listings need to stand out, done for you every month.</p>
+  </div>
 
-<section class="reveal" id="pricing">
-  <p class="eyebrow">Pricing</p>
-  <span class="founder">Founding dealer pricing · the first 10 dealers keep these prices for life</span>
-  <h2>Start small. Scale when you see the results.</h2>
-  <p class="lead">Every car includes up to 6 studio photos (exterior angles and interior), each one checked against your original photos before delivery: same car, same plate, same condition. Delivered within 48 hours.</p>
-  <div class="cur" role="group" aria-label="Currency"><button data-cur="USD" class="on">USD $</button><button data-cur="AED">AED</button></div>
-
-  <div class="calc">
-    <div>
-      <label for="cars">How many cars do you list per month?</label>
-      <p class="q">Drag the bar and see your price.</p>
-      <div class="n"><span id="nCars">10</span> <small>cars / month</small></div>
-      <input type="range" id="cars" min="1" max="40" value="10">
-      <div class="ticks"><span>1</span><span>10</span><span>20</span><span>30</span><span>40</span></div>
+  <div class="offer">
+    <div class="top">
+      <span class="founder">Founding dealer price · locked for life for the first 10 dealers</span>
+      <h3>Studio photos for your whole stock, every month</h3>
+      <p>Up to 20 cars a month · delivered within 48 hours</p>
     </div>
-    <div class="res" aria-live="polite">
-      <div class="plan-name" id="rPlan">Growth Pack</div>
-      <div class="total" id="rTotal">$349</div>
-      <div class="pc" id="rPer">$35 per car</div>
-      <div class="save" id="rSave"></div>
-      <a class="btn" id="rBtn" href="#pricing">Choose this plan</a>
+    <ul class="stack">
+      <li><div><b>Up to 6 studio photos per car</b><span>Front, sides, rear and interior, in a clean studio with professional lighting.</span></div></li>
+      <li><div><b>Every photo checked against your car</b><span>Same car, same plate, same wheels, same condition. If anything doesn't match, we redo it before you ever see it.</span></div></li>
+      <li><div><b>Your dealer logo on every photo</b><span>Buyers who see one of your cars recognise your showroom on the next.</span></div></li>
+      <li><div><b>Listing description rewritten for every car</b><span>Clear, persuasive text that sells the car, ready to paste into Dubizzle, AutoTrader or your site.</span></div></li>
+      <li><div><b>Everything by WhatsApp</b><span>No software to learn. You send, we deliver, you post.</span></div></li>
+      <li class="bonus"><div><b><span class="tag">BONUS</span>Your first 2 cars free</b><span>See the result on your own listings before you pay anything.</span></div></li>
+      <li class="bonus"><div><b><span class="tag">BONUS</span>Social media version of every car</b><span>A vertical 4:5 image of each car, ready for Instagram and Facebook.</span></div></li>
+      <li class="bonus"><div><b><span class="tag">BONUS</span>Your area, only yours</b><span>We work with a maximum of 3 dealers per city, so your competitors can't get the same look.</span></div></li>
+    </ul>
+    <div class="price">
+      <div>
+        <div class="amt">$399<small> /month</small></div>
+        <p class="per">About $20 per car · ≈ AED 1,499/month · cancel anytime</p>
+      </div>
+      <div class="cta">
+        <a class="btn" href="#free">Start with 2 cars free</a>
+        <a class="btn ghost" href="STRIPE_MONTHLY" data-plan="monthly">Start the monthly plan</a>
+        <p class="note">Secure payment by card</p>
+      </div>
     </div>
   </div>
 
   <div class="guar">
-    <div class="seal">100%<br>refund</div>
-    <div><b>Risk-free first pack</b><p>If you don't like the photos of your first pack, tell us within 7 days and you get a full refund. No questions asked.</p></div>
-  </div>
-  <div class="plans">
-    <div class="plan">
-      <h3>Starter Pack</h3><p class="sub">Try it on a few cars from your stock.</p>
-      <p class="price" data-p="149">$149</p><p class="per">5 cars · <span data-p="30">$30</span> per car · one-time</p>
-      <ul><li>Up to 6 studio photos per car</li><li>No Aspeto watermark, your dealer logo instead</li><li>Every photo checked before delivery</li><li>Delivered within 48 hours</li></ul>
-      <a class="btn ghost" href="STRIPE_PACK5" data-plan="pack5">Buy 5 cars</a>
-    </div>
-    <div class="plan pop">
-      <span class="badge">Best value</span>
-      <h3>Showroom Monthly</h3><p class="sub">For dealers with new stock every week.</p>
-      <p class="price"><span data-p="399">$399</span><small>/month</small></p><p class="per">Up to 20 cars a month · <span data-p="20">$20</span> per car</p>
-      <ul><li>Everything in the packs</li><li>Listing description rewritten for every car</li><li>Priority delivery within 24 hours</li><li>Exclusive in your area: max. 3 dealers per city</li><li>Cancel anytime</li></ul>
-      <a class="btn" href="STRIPE_MONTHLY" data-plan="monthly">Start monthly plan</a>
-    </div>
-    <div class="plan">
-      <h3>Growth Pack</h3><p class="sub">A bigger batch, a lower price per car.</p>
-      <p class="price" data-p="349">$349</p><p class="per">15 cars · <span data-p="23">$23</span> per car · one-time</p>
-      <ul><li>Up to 6 studio photos per car</li><li>No Aspeto watermark, your dealer logo instead</li><li>Every photo checked before delivery</li><li>Use them whenever you want</li></ul>
-      <a class="btn ghost" href="STRIPE_PACK15" data-plan="pack15">Buy 15 cars</a>
+    <div class="seal">DOUBLE<br>GUARANTEE</div>
+    <div>
+      <h3>You can't lose</h3>
+      <p><b>Love it or don't pay.</b> If you don't like the photos in your first month, tell us within 7 days and you get every cent back.</p>
+      <p><b>Always your car.</b> If a photo ever doesn't match the real car, we redo it for free within 24 hours.</p>
     </div>
   </div>
-  <p class="free">More than 20 cars a month? Showroom Plus: up to 40 cars for <span data-p="699">$699</span>/month.<br>Not sure yet? <a href="#talk">Get your first 2 cars free</a>, no payment needed (free photos carry a small Aspeto watermark).</p>
+
+  <div class="scar">
+    <div class="card"><b>Only 3 dealers per city</b><p>Once your city is full, new dealers there go on a waiting list.</p></div>
+    <div class="card"><b>Founding price for the first 10 dealers</b><p>Join now and your $399 stays $399 for as long as you're with us.</p></div>
+  </div>
 </section>
 
-<section class="reveal" id="talk">
-  <div class="cta">
+<section class="reveal">
+  <p class="eyebrow">Questions</p>
+  <h2>Before you ask</h2>
+  <div class="faq">
+    <details><summary>Is this AI? Will it change my car?</summary><p>We use AI to create the studio, never to change the car. Same wheels, same plate, same scratches, same mileage. Every photo is checked against your original before delivery, and you approve before anything is posted.</p></details>
+    <details><summary>What do I need to send?</summary><p>4 to 6 phone photos per car: front three-quarter, side, rear and interior. Daylight is best, but we work with what you have.</p></details>
+    <details><summary>What if I have more than 20 cars a month?</summary><p>Tell us your volume and we will put together a plan for your stock.</p></details>
+    <details><summary>Can I cancel?</summary><p>Yes, anytime. No contracts, no cancellation fees.</p></details>
+    <details><summary>Why are the free photos watermarked?</summary><p>Your 2 free cars come with a small Aspeto watermark in the corner. You can post them and compare the results. On the monthly plan, photos are delivered with your own logo instead.</p></details>
+  </div>
+</section>
+
+<section class="reveal" id="free">
+  <div class="final">
     <img src="aspeto.png" alt="Aspeto">
-    <h2>Want to see it on your own cars first?</h2>
-    <p class="lead">Send us the photos of two cars from your stock and we will do them for free, so you can compare the results on your own listings. Free photos carry a small Aspeto watermark; paid photos are delivered clean or with your own dealer logo.</p>
-    <div class="acts"><a class="btn" href="mailto:provrsferreira@gmail.com?subject=Free%202%20cars%20%C2%B7%20Aspeto">Get 2 cars free</a><a class="btn ghost" href="#pricing">See pricing</a></div>
+    <h2>Pick 2 cars. We'll show you.</h2>
+    <p class="lead">Send us the phone photos of any 2 cars from your stock. Within 48 hours you'll have studio photos ready to compare on your own listings. Free, no strings attached.</p>
+    <div class="acts"><a class="btn" href="mailto:provrsferreira@gmail.com?subject=Free%202%20cars%20%C2%B7%20Aspeto">Get my 2 cars free</a></div>
   </div>
 </section>
 
-<footer>Aspeto · Studio-quality car photos for dealers. Images created from the real photos of each vehicle.</footer>
+<footer>Aspeto · Studio-quality car photos for dealers. Images are created from the real photos of each vehicle.</footer>
 <script>
-document.querySelectorAll('a[data-plan]').forEach(a=>{if(a.getAttribute('href').startsWith('STRIPE')){a.href='mailto:provrsferreira@gmail.com?subject='+encodeURIComponent('Aspeto · '+a.textContent)}});
-
-{
-const AED={30:110,20:75,23:85,149:549,349:1299,399:1499,699:2599};
-let cur='USD';
-const fmt=v=>cur==='USD'?'$'+v.toLocaleString('en-US'):'AED '+(AED[v]??Math.round(v*3.6725)).toLocaleString('en-US');
-const fmtRaw=v=>cur==='USD'?'$'+Math.round(v).toLocaleString('en-US'):'AED '+Math.round(v*3.6725).toLocaleString('en-US');
-const links={pack5:document.querySelector('[data-plan=pack5]'),pack15:document.querySelector('[data-plan=pack15]'),monthly:document.querySelector('[data-plan=monthly]')};
-function best(n){
-  const opts=[];
-  // packs only (combination of 15s and 5s)
-  let bestPack=null;
-  for(let a=0;a<=3;a++)for(let b=0;b<=8;b++){if(a*15+b*5>=n){const c=a*349+b*149;if(!bestPack||c<bestPack.c)bestPack={c,a,b}}}
-  const parts=[];if(bestPack.a)parts.push(bestPack.a+'× Growth Pack');if(bestPack.b)parts.push(bestPack.b+'× Starter Pack');
-  opts.push({name:parts.join(' + '),total:bestPack.c,monthly:false,cap:bestPack.a*15+bestPack.b*5,key:bestPack.a?'pack15':'pack5',priceKey:(bestPack.a===1&&!bestPack.b)?349:(bestPack.b===1&&!bestPack.a)?149:null});
-  if(n<=20)opts.push({name:'Showroom Monthly',total:399,monthly:true,key:'monthly',priceKey:399});
-  else opts.push({name:'Showroom Plus',total:699,monthly:true,key:'monthly',priceKey:699});
-  opts.sort((x,y)=>x.total-y.total);return opts[0];
-}
-const el=id=>document.getElementById(id);
-function render(){
-  const n=+el('cars').value;el('nCars').textContent=n;
-  const b=best(n);
-  el('rPlan').textContent=b.name.replace(/^1× /,'').replace(' + 1× ',' + ');
-  el('rTotal').innerHTML=(b.priceKey?fmt(b.priceKey):fmtRaw(b.total))+(b.monthly?'<small>/month</small>':'<small> one-time</small>');
-  const cap=b.cap||n;
-  el('rPer').textContent=fmtRaw(b.total/cap)+' per car'+(cap>n?' · includes '+cap+' cars (the extra ones stay in your account)':'');
-  const saved=cap*29.8-b.total;
-  el('rSave').textContent=saved>=20?'You save '+fmtRaw(saved)+' vs. the Starter Pack price':'';
-  const target=links[b.key];el('rBtn').href=target?target.href:'#pricing';
-  el('rBtn').textContent=b.monthly?'Start '+b.name:'Buy '+b.name.split(' + ')[0].replace(/^\d+× /,'');
-}
-document.querySelectorAll('.cur button').forEach(btn=>btn.addEventListener('click',()=>{
-  cur=btn.dataset.cur;document.querySelectorAll('.cur button').forEach(x=>x.classList.toggle('on',x===btn));
-  document.querySelectorAll('[data-p]').forEach(e=>e.textContent=fmt(+e.dataset.p));render();
-}));
-el('cars').addEventListener('input',render);render();
-}
+// Until the Stripe link exists, the monthly button opens an email instead of a dead link.
+document.querySelectorAll('a[data-plan]').forEach(a=>{if(a.getAttribute('href').startsWith('STRIPE')){a.href='mailto:provrsferreira@gmail.com?subject='+encodeURIComponent('Aspeto · Showroom monthly plan')}});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(s=>io.observe(s));
 </script>
