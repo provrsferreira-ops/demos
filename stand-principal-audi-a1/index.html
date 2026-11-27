@@ -4,68 +4,102 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
-<title>Audi A1 1.6 TDi S-line · Stand Principal (demonstração)</title>
+<title>Aspeto para o Stand Principal · Os vossos carros, com aspeto de stand premium</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0E0F11;--bg2:#16181C;--line:#2A2D33;--ink:#F2F2F0;--mut:#A3A7AE;--red:#E0302F}
+:root{--bg:#0E0F11;--bg2:#16181C;--bg3:#1D2025;--line:#2A2D33;--ink:#F2F2F0;--mut:#A3A7AE;--red:#E0302F}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit}
-h1,h2,h3{font-family:Sora,Inter,sans-serif;line-height:1.1;letter-spacing:-.01em}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;line-height:1.1;letter-spacing:-.015em}
 .demo{background:#000;color:var(--mut);text-align:center;font-size:13px;padding:7px 12px}
-header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:12px clamp(16px,4vw,48px);background:rgba(14,15,17,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.logo{height:44px;background:#fff;border-radius:8px;padding:4px 10px}
-.logo img{height:100%;display:block}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:999px;font-size:15px;border:0;cursor:pointer;white-space:nowrap}
-.btn.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px #fff}
-.hero{position:relative;height:min(88vh,860px);min-height:520px;overflow:hidden}
-.hero img{width:100%;height:100%;object-fit:cover;object-position:center 60%;transform:scale(1.06);animation:zoom 2.4s cubic-bezier(.2,.7,.2,1) forwards}
-@keyframes zoom{to{transform:scale(1)}}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,15,17,.15) 40%,rgba(14,15,17,.95))}
-.hero .txt{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 clamp(16px,4vw,48px) 48px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
-.marca{color:var(--mut);font-size:15px;text-transform:uppercase;letter-spacing:.2em;margin-bottom:8px}
-.hero h1{font-size:clamp(36px,6vw,72px)}
-.preco{text-align:right;padding-right:72px}
-.preco b{display:block;font-family:Sora;font-size:clamp(32px,5vw,56px);color:#fff}
-.preco span{color:var(--mut);font-size:14px}
-section{padding:clamp(40px,6vw,80px) clamp(16px,4vw,48px);max-width:1280px;margin:0 auto}
-h2{font-size:clamp(26px,3.4vw,40px);margin-bottom:24px}
-.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.spec{background:var(--bg2);padding:20px}
-.spec small{display:block;color:var(--mut);font-size:13px;margin-bottom:4px}
-.spec b{font-family:Sora;font-size:20px;font-weight:600}
-.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px clamp(16px,4vw,48px);background:rgba(14,15,17,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.brands{display:flex;align-items:center;gap:14px}
+.brands .sp{height:40px;background:#fff;border-radius:8px;padding:4px 10px}
+.brands .sp img{height:100%;display:block}
+.brands .x{color:var(--mut);font-size:14px}
+.brands .asp{height:22px;display:block}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;text-decoration:none;font-weight:600;padding:13px 22px;border-radius:999px;font-size:15px;border:0;cursor:pointer;white-space:nowrap}
+.btn.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.7)}
+.eyebrow{color:var(--red);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;margin-bottom:14px}
+section{padding:clamp(48px,7vw,96px) clamp(16px,4vw,48px);max-width:1240px;margin:0 auto}
+h2{font-size:clamp(28px,3.6vw,44px);margin-bottom:18px}
+.lead{color:var(--mut);font-size:clamp(16px,1.6vw,19px);max-width:640px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,5vw,72px);align-items:center;padding-top:clamp(40px,6vw,80px)}
+.hero h1{font-size:clamp(38px,5.4vw,68px);margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.chips span{font-size:13px;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.phone{position:relative;justify-self:center;width:min(100%,360px);aspect-ratio:9/16;border-radius:32px;overflow:hidden;background:#000;box-shadow:0 0 0 8px #1a1c20,0 0 0 9px #33363d,0 40px 80px rgba(0,0,0,.6)}
+.phone video,.phone img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.phone .lbl{position:absolute;left:14px;bottom:14px;z-index:2;font-size:12px;font-weight:600;background:rgba(0,0,0,.6);backdrop-filter:blur(6px);padding:5px 12px;border-radius:999px}
+.phone .snd{position:absolute;right:12px;bottom:12px;z-index:2;width:38px;height:38px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;cursor:pointer;font-size:16px}
+
+/* problema */
+.prob{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:26px}
+.card .n{font-family:Sora;color:var(--red);font-size:14px;font-weight:600;margin-bottom:10px}
+.card h3{font-size:20px;margin-bottom:8px}
+.card p{color:var(--mut);font-size:15px}
+
+/* antes depois */
+.ab{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
+.ab figure{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:4/3}
+.ab img{width:100%;height:100%;object-fit:cover;display:block}
+.ab figcaption{position:absolute;top:14px;left:14px;padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600;background:rgba(0,0,0,.65)}
+.ab figcaption.novo{background:var(--red)}
+
+/* servicos */
+.serv{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px}
+.serv .card{display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:start}
+.ico{width:52px;height:52px;border-radius:14px;background:var(--bg3);border:1px solid var(--line);display:grid;place-items:center}
+.ico svg{width:24px;height:24px;stroke:var(--ink);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* porque */
+.why{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,5vw,72px);align-items:start}
+.why ol{list-style:none;counter-reset:w}
+.why li{counter-increment:w;display:grid;grid-template-columns:56px 1fr;gap:10px;padding:22px 0;border-bottom:1px solid var(--line)}
+.why li:first-child{padding-top:0}
+.why li::before{content:"0" counter(w);font-family:Sora;font-weight:700;font-size:22px;color:var(--red)}
+.why h3{font-size:19px;margin-bottom:6px}
+.why p{color:var(--mut);font-size:15px}
+.quote{position:sticky;top:110px;background:var(--bg2);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.quote img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.quote blockquote{padding:26px;font-family:Sora;font-size:clamp(20px,2.2vw,26px);line-height:1.25}
+.quote blockquote span{display:block;font-family:Inter;font-size:14px;color:var(--mut);margin-top:12px}
+
+/* galeria */
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:32px}
 .gal button{border:0;padding:0;background:none;cursor:zoom-in;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
 .gal button.big{grid-column:span 2;grid-row:span 2}
 .gal button.wide{grid-column:span 2;aspect-ratio:8/3}
 .gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
 .gal button:hover img{transform:scale(1.04)}
-.nota{color:var(--mut);font-size:13px;margin-top:12px}
-.ba{position:relative;aspect-ratio:4/3;max-height:720px;border-radius:16px;overflow:hidden;user-select:none;margin:0 auto;width:100%}
-.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ba .after{clip-path:inset(0 0 0 50%)}
-.ba .bar{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;transform:translateX(-50%);pointer-events:none}
-.ba .bar::after{content:"⇆";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#fff;color:#111;display:grid;place-items:center;font-size:20px}
-.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize}
-.tag{position:absolute;top:14px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;background:rgba(0,0,0,.6)}
-.tag.l{left:14px}.tag.r{right:14px;background:var(--red)}
-.ab{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.ab figure{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3}
-.ab img{width:100%;height:100%;object-fit:cover;display:block}
-.ab figcaption{position:absolute;top:14px;left:14px;padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600;background:rgba(0,0,0,.65)}
-.ab figcaption.novo{background:var(--red)}
-.equip{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
-.equip h3{font-size:16px;color:var(--mut);font-family:Inter;font-weight:600;margin-bottom:10px}
-.equip li{list-style:none;padding:6px 0;border-bottom:1px solid var(--line)}
-.contacto{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:clamp(24px,4vw,48px);display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
-.contacto p{color:var(--mut)}
-.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-.dados p{padding:6px 0}
-.dados b{color:var(--ink)}
-footer{text-align:center;color:var(--mut);font-size:13px;padding:32px 16px 96px;border-top:1px solid var(--line)}
-.wa{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.nota{color:var(--mut);font-size:13px;margin-top:14px}
+.link{display:inline-block;margin-top:18px;color:var(--ink);font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--red);padding-bottom:2px}
+
+/* processo */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.steps .card .n{font-size:40px;line-height:1;margin-bottom:16px;font-weight:700}
+
+/* honestidade */
+.honest{display:flex;gap:18px;align-items:flex-start;background:var(--bg2);border:1px solid var(--line);border-left:3px solid var(--red);border-radius:14px;padding:24px 26px}
+.honest p{color:var(--mut)}
+.honest b{color:var(--ink)}
+
+/* cta */
+.cta{text-align:center;background:radial-gradient(120% 140% at 50% 0%,#2a1414 0%,var(--bg2) 55%);border:1px solid var(--line);border-radius:26px;padding:clamp(36px,6vw,72px) clamp(20px,4vw,48px)}
+.cta .lead{margin:0 auto}
+.cta .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.cta .asp{height:28px;margin:0 auto 26px;display:block;opacity:.9}
+
+footer{text-align:center;color:var(--mut);font-size:13px;padding:32px 16px 48px;border-top:1px solid var(--line)}
+
 .lb{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center}
 .lb.on{display:flex}
 .lb img{max-width:94vw;max-height:86vh;border-radius:8px}
@@ -73,43 +107,108 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:32px 16px 96px;
 .lb .x{top:16px;right:16px}.lb .p{left:16px;top:50%}.lb .n{right:16px;top:50%}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
 .reveal.in{opacity:1;transform:none}
-@media(max-width:760px){.gal{grid-template-columns:1fr 1fr}.ab{grid-template-columns:1fr}.preco{padding-right:0}.contacto{grid-template-columns:1fr}.preco{text-align:left}header .btn{padding:10px 14px;font-size:14px}}
+
+@media(max-width:900px){
+ .hero,.why{grid-template-columns:1fr}
+ .phone{width:min(78vw,340px)}
+ .prob,.steps{grid-template-columns:1fr}
+ .serv{grid-template-columns:1fr}
+ .quote{position:static}
+}
+@media(max-width:640px){
+ .ab{grid-template-columns:1fr}
+ .gal{grid-template-columns:1fr 1fr}
+ header .btn{padding:10px 14px;font-size:14px}
+ .brands .x,.brands .asp{display:none}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div class="demo">Demonstração preparada pela Aspeto para o Stand Principal · não é o site oficial</div>
+<div class="demo">Apresentação preparada pela Aspeto para o Stand Principal · demonstração privada</div>
+
 <header>
-  <div class="logo"><img src="https://multidealer.easysite.pt/assets/img/standprincipal.pt/logo" alt="Stand Principal"></div>
-  <a class="btn" href="https://wa.me/351937455631?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Audi%20A1%201.6%20TDi%20S-line">Falar no WhatsApp</a>
+  <div class="brands">
+    <div class="sp"><img src="https://multidealer.easysite.pt/assets/img/standprincipal.pt/logo" alt="Stand Principal"></div>
+    <span class="x">×</span>
+    <img class="asp" src="aspeto.png" alt="Aspeto">
+  </div>
+  <a class="btn" href="#falar">Quero isto no stand</a>
 </header>
 
-<div class="hero">
-  <img src="frente34.jpg" alt="Audi A1 1.6 TDi S-line branco, vista frontal em estúdio">
-  <div class="txt">
-    <div><p class="marca">Audi</p><h1>A1 1.6 TDi S-line</h1></div>
-    <div class="preco"><b>8 500 €</b><span>ou desde 128,16 €/mês*</span></div>
+<section class="hero">
+  <div class="reveal in">
+    <p class="eyebrow">Aspeto para stands automóveis</p>
+    <h1>Os vossos carros já são bons. <em>Façam-nos parecer</em> tão bons como são.</h1>
+    <p class="lead">Pegamos nas fotografias que já tiram no parque e transformamo-las em fotos de estúdio e vídeos cinematográficos, prontos para o Standvirtual, OLX, Instagram e o vosso site. Sem estúdio, sem fotógrafo, sem tirar o carro do stand.</p>
+    <div class="acts">
+      <a class="btn" href="#falar">Falar com a Aspeto</a>
+      <a class="btn ghost" href="#exemplo">Ver o exemplo do Audi A1</a>
+    </div>
+    <div class="chips"><span>Fotos de estúdio</span><span>Vídeo por viatura</span><span>Página de anúncio premium</span><span>Pronto a publicar</span></div>
   </div>
-</div>
-
-<section class="reveal">
-  <h2>Características</h2>
-  <div class="specs">
-    <div class="spec"><small>Registo</small><b>Mar. 2011</b></div>
-    <div class="spec"><small>Quilómetros</small><b>236 173 km</b></div>
-    <div class="spec"><small>Combustível</small><b>Gasóleo</b></div>
-    <div class="spec"><small>Potência</small><b>90 cv</b></div>
-    <div class="spec"><small>Cilindrada</small><b>1598 cc</b></div>
-    <div class="spec"><small>Caixa</small><b>Manual, 5 vel.</b></div>
-    <div class="spec"><small>Cor</small><b>Branco</b></div>
-    <div class="spec"><small>Portas / lugares</small><b>3 / 4</b></div>
-    <div class="spec"><small>Segunda chave</small><b>Sim</b></div>
-    <div class="spec"><small>Garantia</small><b>Sim</b></div>
+  <div class="phone reveal in">
+    <video id="vid" src="video.mp4" poster="frente34.jpg" autoplay muted loop playsinline preload="metadata"></video>
+    <span class="lbl">O vosso Audi A1 · vídeo Aspeto</span>
   </div>
 </section>
 
 <section class="reveal">
-  <h2>Galeria</h2>
+  <p class="eyebrow">O problema</p>
+  <h2>O cliente escolhe o carro no telemóvel, antes de pôr os pés no stand.</h2>
+  <p class="lead">Num portal com centenas de anúncios iguais, a primeira fotografia é o que decide se alguém clica no vosso carro ou passa à frente.</p>
+  <div class="prob">
+    <div class="card"><p class="n">01</p><h3>Fotos de parque</h3><p>Reflexos, sombras, outros carros e o céu de fundo. O carro pode estar impecável, mas a foto não o mostra.</p></div>
+    <div class="card"><p class="n">02</p><h3>Anúncios todos iguais</h3><p>Nos portais, quem não se distingue compete só pelo preço. E baixar o preço é a forma mais cara de vender.</p></div>
+    <div class="card"><p class="n">03</p><h3>Redes sociais sem vídeo</h3><p>Instagram, TikTok e Facebook mostram vídeo primeiro. Uma galeria de fotos de parque passa despercebida.</p></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <p class="eyebrow">Antes e depois</p>
+  <h2>O mesmo carro. Outra primeira impressão.</h2>
+  <p class="lead">À esquerda, a foto que está hoje no vosso anúncio. À direita, a mesma viatura depois do tratamento Aspeto.</p>
+  <div class="ab">
+    <figure><img src="https://cdn.easysite.pt/pub/16548/1716745/API_NCAUTO_17897454702270-0.webp" alt="Fotografia original do Audi A1 no parque do stand" loading="lazy"><figcaption>Foto atual do anúncio</figcaption></figure>
+    <figure><img src="frente34.jpg" alt="O mesmo Audi A1 com tratamento de estúdio" loading="lazy"><figcaption class="novo">Com a Aspeto</figcaption></figure>
+  </div>
+</section>
+
+<section class="reveal">
+  <p class="eyebrow">O que fazemos</p>
+  <h2>Tudo o que um carro precisa para vender online.</h2>
+  <div class="serv">
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="12" cy="13" r="3.5"/><path d="M8 6l1.5-2h5L16 6"/></svg></div><div><h3>Fotografia de estúdio</h3><p>As vossas fotos do parque passam a fotos de estúdio: fundo limpo, luz profissional, reflexos controlados. O carro continua exatamente igual, com as mesmas jantes, a mesma matrícula e o mesmo estado.</p></div></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="14" height="14" rx="2"/><path d="M17 10l4-2v8l-4-2"/></svg></div><div><h3>Vídeo cinematográfico</h3><p>Um vídeo vertical por viatura, pronto para Reels, TikTok, Stories e anúncios pagos. O formato que as redes mais mostram.</p></div></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div><div><h3>Página de viatura premium</h3><p>Uma página por carro, com galeria, ficha técnica, equipamento e WhatsApp a um toque. Ideal para partilhar com quem pergunta pelo carro.</p></div></div>
+    <div class="card"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div><div><h3>Imagem de marca do stand</h3><p>O mesmo estilo em todos os carros, com o vosso logótipo. Quem vê um anúncio vosso reconhece o stand no seguinte.</p></div></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="why">
+    <div>
+      <p class="eyebrow">Porque os stands vendem mais connosco</p>
+      <h2>Uma apresentação melhor não muda o carro. Muda quantas pessoas param para o ver.</h2>
+      <div class="quote" style="margin-top:28px">
+        <img src="lado.jpg" alt="Audi A1 de perfil em estúdio" loading="lazy">
+        <blockquote>“Um carro bem apresentado parece um carro bem cuidado.”<span>E um carro bem cuidado é o que o comprador procura.</span></blockquote>
+      </div>
+    </div>
+    <ol>
+      <li><div><h3>Mais cliques no anúncio</h3><p>Uma primeira foto de estúdio destaca-se no meio de uma lista de fotos de parque. Mais pessoas abrem o vosso anúncio em vez do da concorrência.</p></div></li>
+      <li><div><h3>Mais confiança antes da visita</h3><p>Fotos cuidadas passam a ideia de um stand profissional e de carros bem tratados. O cliente chega ao stand já convencido do carro.</p></div></li>
+      <li><div><h3>Mais contactos diretos</h3><p>Com o vídeo nas redes e a página com WhatsApp a um toque, o cliente fala convosco em segundos, sem formulários.</p></div></li>
+      <li><div><h3>Menos pressão para baixar o preço</h3><p>Um carro que parece premium defende melhor o seu preço. Competem pela apresentação, não só pelo valor.</p></div></li>
+      <li><div><h3>Sem perder tempo</h3><p>Continuam a tirar as fotos como sempre e enviam-nas por WhatsApp. Nós tratamos do resto e devolvemos tudo pronto a publicar.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="reveal" id="exemplo">
+  <p class="eyebrow">Exemplo real</p>
+  <h2>O vosso Audi A1 1.6 TDi S-line, tratado pela Aspeto.</h2>
+  <p class="lead">Fizemos este exemplo com as fotografias do vosso anúncio. Oito fotos de estúdio e um vídeo, a partir das fotos que já tinham.</p>
   <div class="gal" id="gal">
     <button class="big" data-i="0"><img src="frente34.jpg" alt="Vista frontal três quartos" loading="lazy"></button>
     <button data-i="1"><img src="lado.jpg" alt="Perfil lateral" loading="lazy"></button>
@@ -120,48 +219,39 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:32px 16px 96px;
     <button class="wide" data-i="6"><img src="interior.jpg" alt="Interior com bancos em pele" loading="lazy"></button>
     <button data-i="7"><img src="tablier.jpg" alt="Volante e painel de instrumentos" loading="lazy"></button>
   </div>
-  <p class="nota">Imagens de estúdio criadas a partir das fotografias reais desta viatura, sem alterar o seu estado.</p>
+  <a class="link" href="anuncio.html">Ver como ficaria a página deste carro →</a>
 </section>
 
 <section class="reveal">
-  <h2>Antes e depois</h2>
-  <div class="ab">
-    <figure><img src="https://cdn.easysite.pt/pub/16548/1716745/API_NCAUTO_17897454702270-0.webp" alt="Fotografia original no parque" loading="lazy"><figcaption>Foto atual do anúncio</figcaption></figure>
-    <figure><img src="frente34.jpg" alt="Mesma viatura com tratamento de estúdio" loading="lazy"><figcaption class="novo">Com a Aspeto</figcaption></figure>
+  <p class="eyebrow">Como funciona</p>
+  <h2>Três passos, sem mudar a vossa rotina.</h2>
+  <div class="steps">
+    <div class="card"><p class="n">1</p><h3>Tiram as fotos como sempre</h3><p>Com o telemóvel, no parque. Frente, lados, traseira, jantes e interior.</p></div>
+    <div class="card"><p class="n">2</p><h3>Enviam-nas por WhatsApp</h3><p>Sem plataformas novas nem contas para criar. Só uma conversa.</p></div>
+    <div class="card"><p class="n">3</p><h3>Recebem tudo pronto</h3><p>Fotos de estúdio, vídeo e página do carro, prontos para os portais e as redes.</p></div>
   </div>
 </section>
 
 <section class="reveal">
-  <h2>Equipamento</h2>
-  <div class="equip">
-    <div><h3>Segurança e desempenho</h3><ul><li>ABS</li><li>Airbags frontais e laterais</li><li>Cruise control</li><li>ISOFIX</li><li>Sensor de estacionamento traseiro</li><li>Sensores de chuva e de luzes</li></ul></div>
-    <div><h3>Conforto e multimédia</h3><ul><li>GPS</li><li>Bluetooth</li><li>Entrada USB</li><li>Computador de bordo</li><li>Fecho central</li></ul></div>
-    <div><h3>Exterior</h3><ul><li>Jantes de liga leve</li><li>Retrovisores com anti-encandeamento</li><li>Pack S-line</li></ul></div>
+  <div class="honest">
+    <div class="ico" style="flex:0 0 auto"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg></div>
+    <p><b>Honestidade em primeiro lugar.</b> As imagens de estúdio são criadas a partir das fotografias reais de cada viatura. Mudamos o fundo e a luz, nunca o carro: riscos, quilómetros e estado ficam como estão. Cada anúncio pode indicar isso, para o cliente saber sempre o que vai encontrar no stand.</p>
   </div>
 </section>
 
-<section class="reveal">
-  <div class="contacto">
-    <div>
-      <h2>Venha ver o A1 ao vivo</h2>
-      <p>A viatura está no stand, em Cacia, Aveiro. Marque a sua visita ou peça mais informações.</p>
-      <div class="acts">
-        <a class="btn" href="https://wa.me/351937455631?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Audi%20A1%201.6%20TDi%20S-line">WhatsApp · Pedro Raimundo</a>
-        <a class="btn ghost" href="tel:+351234918029">Ligar 234 918 029</a>
-      </div>
-    </div>
-    <div class="dados">
-      <p><b>Stand Principal</b><br>Avenida Europa nº 384, 3800-533 Cacia</p>
-      <p>Telemóvel: <b>937 455 631</b></p>
-      <p>Email: <b>geral@standprincipal.pt</b></p>
+<section class="reveal" id="falar">
+  <div class="cta">
+    <img class="asp" src="aspeto.png" alt="Aspeto">
+    <h2>Querem ver isto nos próximos carros do stand?</h2>
+    <p class="lead">Escolham uma ou duas viaturas e fazemos o primeiro tratamento convosco, para verem o resultado nos vossos anúncios.</p>
+    <div class="acts">
+      <a class="btn" href="mailto:provrsferreira@gmail.com?subject=Aspeto%20%C2%B7%20Stand%20Principal">Falar com a Aspeto</a>
+      <a class="btn ghost" href="anuncio.html">Ver a página do Audi A1</a>
     </div>
   </div>
-  <p class="nota">*Valor de financiamento indicado no anúncio original; condições a confirmar junto do stand.</p>
 </section>
 
-<footer>Demonstração preparada pela Aspeto para o Stand Principal. Dados retirados do anúncio público da viatura.</footer>
-
-<a class="wa" href="https://wa.me/351937455631" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .3-3.4-.7-2.9-1.2-4.7-4.1-4.8-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.4.1.1.1.7-.2 1.4Z"/></svg></a>
+<footer>Apresentação preparada pela Aspeto para o Stand Principal. Imagens e vídeo criados a partir das fotografias públicas do anúncio da viatura.</footer>
 
 <div class="lb" id="lb" role="dialog" aria-modal="true"><img alt=""><button class="x" aria-label="Fechar">×</button><button class="p" aria-label="Anterior">‹</button><button class="n" aria-label="Seguinte">›</button></div>
 
@@ -176,6 +266,7 @@ lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('on')});
 document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')show(k-1);if(e.key==='ArrowRight')show(k+1)});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(s=>io.observe(s));
+const v=document.getElementById('vid');v&&v.addEventListener('error',()=>{v.removeAttribute('src');v.load()});
 }
 </script>
 </body>
