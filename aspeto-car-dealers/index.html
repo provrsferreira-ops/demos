@@ -73,6 +73,37 @@ h2{font-size:clamp(32px,4.4vw,56px);margin-bottom:18px}
 .track span::after{content:"✦";color:var(--red);font-size:14px}
 @keyframes mq{to{transform:translateX(-50%)}}
 
+
+/* views + buyer messages on the switch */
+.flip .eye{position:absolute;top:18px;right:18px;z-index:3;display:flex;align-items:center;gap:7px;background:rgba(10,11,13,.7);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 14px 7px 10px;font:800 17px Sora,Inter,sans-serif;transition:background .5s,box-shadow .5s}
+.flip .eye svg{width:20px;height:20px}.flip .eye small{font:500 12px Inter,sans-serif;color:#C9CCD1}
+.flip.on .eye{background:linear-gradient(135deg,var(--red),var(--red2));border-color:transparent;box-shadow:0 8px 24px rgba(224,48,47,.5)}
+.flip.on .eye small{color:#fff}
+.bump{animation:bump .4s}@keyframes bump{50%{transform:scale(1.15)}}
+.plus{position:absolute;z-index:4;font:800 13px Sora,sans-serif;color:#fff;background:rgba(224,48,47,.88);border-radius:999px;padding:2px 9px;pointer-events:none;animation:floatup 1.3s ease-out forwards}
+@keyframes floatup{0%{opacity:0;transform:translateY(0) scale(.7)}15%{opacity:1;transform:translateY(-6px) scale(1)}100%{opacity:0;transform:translateY(-80px) scale(.9)}}
+.flip.on .after{animation:lights 1.6s ease-out}
+@keyframes lights{0%{filter:brightness(.05)}12%{filter:brightness(.05)}17%{filter:brightness(1.1)}22%{filter:brightness(.2)}30%{filter:brightness(1.15)}36%{filter:brightness(.55)}100%{filter:brightness(1)}}
+.inbox{max-width:620px;margin:16px auto 0;background:var(--bg2);border:1px solid var(--line);border-radius:22px;padding:14px 14px 8px;transition:border-color .4s,box-shadow .4s}
+.inbox.on{border-color:rgba(37,211,102,.45);box-shadow:0 0 40px rgba(37,211,102,.08)}
+.ihead{display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:700;color:#C9CCD1;margin-bottom:8px}
+.ihead span{display:flex;align-items:center;gap:7px}.ihead svg{color:#25D366}
+.ihead em{font-style:normal;font-size:12px;padding:3px 11px;border-radius:999px;background:#2a2d33;color:var(--mut);transition:background .3s,color .3s}
+.inbox.on .ihead em{background:#25D366;color:#05210f}
+.empty{color:#6E727A;font-size:14px;padding:4px 2px 10px}.inbox.on .empty{display:none}
+.msgs{display:flex;flex-direction:column;gap:8px;padding-bottom:6px}
+.typing,.msg{display:none}.inbox.on .typing.show,.inbox.on .msg.show{display:flex}
+.typing{align-items:center;gap:8px;color:var(--mut);font-size:12px;padding:2px 4px}
+.typing span{display:flex;gap:3px;background:#fff;border-radius:12px;padding:8px 10px}
+.typing span b{width:6px;height:6px;border-radius:50%;background:#99a;animation:dot 1s infinite}
+.typing span b:nth-child(2){animation-delay:.15s}.typing span b:nth-child(3){animation-delay:.3s}
+@keyframes dot{40%{transform:translateY(-4px);background:#556}}
+.msg{gap:10px;align-items:flex-start;max-width:94%;background:#fff;color:#111;border-radius:16px 16px 16px 5px;padding:9px 12px;font-size:15px;line-height:1.3;box-shadow:0 10px 24px rgba(0,0,0,.35);animation:pop .45s cubic-bezier(.2,1.5,.4,1)}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.94)}to{opacity:1;transform:none}}
+.msg i{flex:0 0 26px;height:26px;border-radius:50%;display:grid;place-items:center;font-style:normal;color:#fff;font-size:11px;font-weight:800}
+.msg[data-i="0"] i{background:#25D366}.msg[data-i="1"] i{background:#3B82F6}.msg[data-i="2"] i{background:#A855F7}
+.msg b{display:block;font-size:11px;color:#778}
+.inote{color:#6E727A;font-size:12px;margin-top:8px;text-align:center}
 /* before/after switch */
 .flip{position:relative;margin-top:40px;border-radius:28px;overflow:hidden;aspect-ratio:16/10;background:#000;box-shadow:0 50px 100px rgba(0,0,0,.6);border:1px solid var(--line)}
 .flip img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .9s ease,transform 1.2s ease,filter .9s}
@@ -196,6 +227,8 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 16px 110px
 }
 @media(max-width:640px){
  .flip{aspect-ratio:4/5}
+ .flip::before{content:"";position:absolute;inset:0 0 auto;height:22%;z-index:1;pointer-events:none;background:linear-gradient(#0c0c0e 0 40%,transparent);opacity:0;transition:opacity .9s}
+ .flip.on::before{opacity:1}
  .guar{grid-template-columns:1fr;text-align:center}.seal{margin:0 auto}
  .switch{font-size:14px;padding-left:16px;white-space:nowrap}
 }
@@ -241,8 +274,22 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 16px 110px
     <img class="after" src="frente34.jpg" alt="The same car with the Aspeto studio treatment">
     <div class="flash"></div>
     <span class="label" id="flabel">Original listing photo</span>
+    <div class="eye" id="eye"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span id="views">9</span><small>views</small></div>
     <button class="switch" id="sw" aria-pressed="false"><span id="swtxt">Turn the studio on</span><span class="tog"></span></button>
   </div>
+  <div class="inbox reveal" id="inbox">
+    <div class="ihead"><span><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg> Buyer messages</span><em id="cnt">0 new</em></div>
+    <div class="empty">Quiet today. Lot photos don't get many clicks.</div>
+    <div class="msgs" id="msgs">
+      <div class="typing" data-i="0"><span><b></b><b></b><b></b></span>Buyer is typing…</div>
+      <div class="msg" data-i="0"><i>A</i><div><b>Buyer · just now</b>Hi, is this car still available?</div></div>
+      <div class="typing" data-i="1"><span><b></b><b></b><b></b></span>Buyer is typing…</div>
+      <div class="msg" data-i="1"><i>M</i><div><b>Buyer · just now</b>What's your best price?</div></div>
+      <div class="typing" data-i="2"><span><b></b><b></b><b></b></span>Buyer is typing…</div>
+      <div class="msg" data-i="2"><i>R</i><div><b>Buyer · just now</b>Can I come and see it today?</div></div>
+    </div>
+  </div>
+  <p class="inote">Views and messages are an illustration of the effect, not real data.</p>
   <p class="hint">Tap the switch to compare.</p>
 </section>
 
@@ -376,7 +423,17 @@ addEventListener('scroll',onScroll,{passive:true});onScroll();
 
 const box=document.getElementById('flipbox'),sw=document.getElementById('sw'),lab=document.getElementById('flabel'),txt=document.getElementById('swtxt');
 let auto=true;
-const setOn=on=>{box.classList.toggle('on',on);sw.setAttribute('aria-pressed',on);lab.textContent=on?'With Aspeto':'Original listing photo';txt.textContent=on?'Studio on':'Turn the studio on';if(on){box.classList.remove('flashing');void box.offsetWidth;box.classList.add('flashing')}};
+const eye=document.getElementById('eye'),vw=document.getElementById('views'),inbox=document.getElementById('inbox'),cnt=document.getElementById('cnt'),items=[...document.querySelectorAll('#msgs > div')];
+let raf,plusT,timers=[];
+const bump=el=>{el.classList.remove('bump');void el.offsetWidth;el.classList.add('bump')};
+const plus=()=>{const p=document.createElement('span');p.className='plus';p.textContent='+'+(Math.floor(Math.random()*24)+6);p.style.right=(30+Math.random()*90)+'px';p.style.top='52px';box.appendChild(p);setTimeout(()=>p.remove(),1300)};
+const count=to=>{cancelAnimationFrame(raf);clearInterval(plusT);const from=+vw.textContent,t0=performance.now(),d=to>from?1900:500;if(to>from)plusT=setInterval(plus,180);
+  const step=t=>{const p=Math.min(1,(t-t0)/d),e=1-Math.pow(1-p,3);vw.textContent=Math.round(from+(to-from)*e);if(p<1)raf=requestAnimationFrame(step);else{clearInterval(plusT);bump(eye)}};raf=requestAnimationFrame(step)};
+const setOn=on=>{timers.forEach(clearTimeout);timers=[];box.classList.toggle('on',on);inbox.classList.toggle('on',on);sw.setAttribute('aria-pressed',on);lab.textContent=on?'With Aspeto':'Original listing photo';txt.textContent=on?'Studio on':'Turn the studio on';items.forEach(x=>x.classList.remove('show'));
+  if(on){box.classList.remove('flashing');void box.offsetWidth;box.classList.add('flashing');timers.push(setTimeout(()=>count(247),450));
+    let t=1300;[0,1,2].forEach(i=>{const ty=items.find(x=>x.classList.contains('typing')&&x.dataset.i==i),m=items.find(x=>x.classList.contains('msg')&&x.dataset.i==i);
+      timers.push(setTimeout(()=>ty.classList.add('show'),t));t+=900;timers.push(setTimeout(()=>{ty.classList.remove('show');m.classList.add('show');cnt.textContent=(i+1)+' new';bump(cnt)},t));t+=350})}
+  else{count(9);cnt.textContent='0 new'}};
 sw.addEventListener('click',()=>{auto=false;setOn(!box.classList.contains('on'))});
 new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){o.disconnect();setTimeout(()=>{if(auto)setOn(true)},1400)}}),{threshold:.6}).observe(box);
 
