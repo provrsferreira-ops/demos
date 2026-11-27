@@ -7,7 +7,7 @@
 <meta name="theme-color" content="#0A0B0D">
 <title>The Showroom Offer · Aspeto for Car Dealers</title>
 <meta property="og:title" content="The Showroom Offer · Aspeto">
-<meta property="og:description" content="Studio-quality photos of every car on your lot, from the phone photos you already take. First 2 cars free.">
+<meta property="og:description" content="Studio-quality photos of every car on your lot, from the phone photos you already take. One car free per showroom.">
 <meta property="og:image" content="https://provrsferreira-ops.github.io/demos/aspeto-car-dealers/frente34.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -103,6 +103,8 @@ h2{font-size:clamp(32px,4.4vw,56px);margin-bottom:18px}
 .msg i{flex:0 0 26px;height:26px;border-radius:50%;display:grid;place-items:center;font-style:normal;color:#fff;font-size:11px;font-weight:800}
 .msg[data-i="0"] i{background:#25D366}.msg[data-i="1"] i{background:#3B82F6}.msg[data-i="2"] i{background:#A855F7}
 .msg b{display:block;font-size:11px;color:#778}
+.flip .eye span{font-variant-numeric:tabular-nums;min-width:3ch;text-align:right}
+.inbox{min-height:262px}
 .inote{color:#6E727A;font-size:12px;margin-top:8px;text-align:center}
 /* before/after switch */
 .flip{position:relative;margin-top:40px;border-radius:28px;overflow:hidden;aspect-ratio:16/10;background:#000;box-shadow:0 50px 100px rgba(0,0,0,.6);border:1px solid var(--line)}
@@ -233,12 +235,14 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 16px 110px
  .switch{font-size:14px;padding-left:16px;white-space:nowrap}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.hero .bg img{filter:none}.hero h1,.hero .lead,.hero .acts,.hero .small,.chip{opacity:1;transform:none}.reveal,.stack li{opacity:1;transform:none}}
+
+html,body{overflow-x:hidden;overflow-x:clip;max-width:100%}
 </style>
 </head>
 <body>
 <header id="hdr">
   <img src="aspeto.png" alt="Aspeto">
-  <a class="btn sm" href="try/">Get 2 cars free</a>
+  <a class="btn sm" href="try/">Try 1 car free</a>
 </header>
 
 <section class="hero" style="max-width:none;padding:0">
@@ -246,13 +250,13 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 16px 110px
   <div class="chips" aria-hidden="true">
     <div class="chip"><i>✓</i>Same car, same plate</div>
     <div class="chip"><i>⚡</i>Delivered in 48h</div>
-    <div class="chip"><i>★</i>First 2 cars free</div>
+    <div class="chip"><i>★</i>1 car free per showroom</div>
   </div>
   <div class="inner">
     <p class="eyebrow">Aspeto for used car dealers</p>
     <h1>Your lot photos.<br><span class="grad">Studio results.</span></h1>
     <p class="lead">You keep taking phone photos on the lot. We send back the same car, shot like a showroom, checked one by one and ready for your listings. No photographer. No studio. No new app.</p>
-    <div class="acts"><a class="btn" href="try/">Get 2 cars free <span class="arrow">→</span></a><a class="btn ghost" href="#flip">See the difference</a></div>
+    <div class="acts"><a class="btn" href="try/">Try 1 car free <span class="arrow">→</span></a><a class="btn ghost" href="#flip">See the difference</a></div>
     <p class="small">No payment, no contract. Don't like it? Just walk away.</p>
   </div>
   <div class="scroll" aria-hidden="true"></div>
@@ -352,7 +356,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 16px 110px
         <li><div><b>Your dealer logo on every photo</b><span>Buyers who see one of your cars recognise your showroom on the next.</span></div></li>
         <li><div><b>Listing description rewritten for every car</b><span>Clear, persuasive text that sells the car, ready to paste into Dubizzle, AutoTrader or your site.</span></div></li>
         <li><div><b>Everything by WhatsApp</b><span>No software to learn. You send, we deliver, you post.</span></div></li>
-        <li class="bonus"><div><b><span class="tag">BONUS</span>Your first 2 cars free</b><span>See the result on your own listings before you pay anything.</span></div></li>
+        <li class="bonus"><div><b><span class="tag">BONUS</span>Your first car free</b><span>One studio photo of a car you pick, before you pay anything. One per showroom.</span></div></li>
         <li class="bonus"><div><b><span class="tag">BONUS</span>Social media version of every car</b><span>A vertical 4:5 image of each car, ready for Instagram and Facebook.</span></div></li>
         <li class="bonus"><div><b><span class="tag">BONUS</span>Your area, only yours</b><span>We work with a maximum of 3 dealers per city, so your competitors can't get the same look.</span></div></li>
       </ul>
@@ -362,7 +366,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 16px 110px
           <p class="per">About $20 per car · ≈ AED 1,499/month · cancel anytime</p>
         </div>
         <div class="cta">
-          <a class="btn" href="try/">Start with 2 cars free <span class="arrow">→</span></a>
+          <a class="btn" href="try/">Start with 1 car free <span class="arrow">→</span></a>
           <a class="btn ghost" href="STRIPE_MONTHLY" data-plan="monthly">Start the monthly plan</a>
           <p class="note">Secure payment by card</p>
         </div>
@@ -395,7 +399,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 16px 110px
     <details><summary>What do I need to send?</summary><p>4 to 6 phone photos per car: front three-quarter, side, rear and interior. Daylight is best, but we work with what you have.</p></details>
     <details><summary>What if I have more than 20 cars a month?</summary><p>Tell us your volume and we will put together a plan for your stock.</p></details>
     <details><summary>Can I cancel?</summary><p>Yes, anytime. No contracts, no cancellation fees.</p></details>
-    <details><summary>Why are the free photos watermarked?</summary><p>Your 2 free cars come with a small Aspeto watermark in the corner. You can post them and compare the results. On the monthly plan, photos are delivered with your own logo instead.</p></details>
+    <details><summary>How does the free test work?</summary><p>One free test per showroom: pick one car from your stock and we send back its main studio photo within 48 hours. It carries a small "Edited by Aspeto" mark in the corner, so you can post it and compare. On the monthly plan, every photo of every car is delivered clean, with your own logo. The free test is for car showrooms, not private sellers.</p></details>
   </div>
 </section>
 
@@ -403,14 +407,14 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:36px 16px 110px
   <div class="final reveal">
     <div class="bgimg"></div>
     <img src="aspeto.png" alt="Aspeto">
-    <h2>Pick 2 cars.<br><span class="grad">We'll show you.</span></h2>
-    <p class="lead">Send us the phone photos of any 2 cars from your stock. Within 48 hours you'll have studio photos to compare on your own listings. Free, no strings attached.</p>
-    <div class="acts"><a class="btn" href="https://wa.me/351917261141?text=Hi%20Aspeto%2C%20I%27d%20like%20my%202%20free%20cars.%20I%27ll%20send%20the%20photos%20here.">Get my 2 cars free <span class="arrow">→</span></a></div>
+    <h2>Pick 1 car.<br><span class="grad">We'll show you.</span></h2>
+    <p class="lead">Send us the phone photos of one car from your stock. Within 48 hours you get its studio photo to post on your own listing. Free, one per showroom, no strings attached.</p>
+    <div class="acts"><a class="btn" href="https://wa.me/351917261141?text=Hi%20Aspeto%2C%20I%27d%20like%20my%20free%20studio%20test.%20I%27ll%20send%20the%20photos%20of%20one%20car%20here.">Get my free test <span class="arrow">→</span></a></div>
   </div>
 </section>
 
 <footer>Aspeto · Studio-quality car photos for dealers. Images are created from the real photos of each vehicle.</footer>
-<div class="mbar" id="mbar"><a class="btn" href="try/">Get 2 cars free <span class="arrow">→</span></a></div>
+<div class="mbar" id="mbar"><a class="btn" href="try/">Try 1 car free <span class="arrow">→</span></a></div>
 
 <script>
 {
