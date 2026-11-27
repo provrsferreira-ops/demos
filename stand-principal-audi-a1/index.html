@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Audi A1 1.6 TDi S-line · Stand Principal (demonstração)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0E0F11;--bg2:#16181C;--line:#2A2D33;--ink:#F2F2F0;--mut:#A3A7AE;--red:#E0302F}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;line-height:1.1;letter-spacing:-.01em}
+.demo{background:#000;color:var(--mut);text-align:center;font-size:13px;padding:7px 12px}
+header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:12px clamp(16px,4vw,48px);background:rgba(14,15,17,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{height:44px;background:#fff;border-radius:8px;padding:4px 10px}
+.logo img{height:100%;display:block}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:#fff;text-decoration:none;font-weight:600;padding:12px 20px;border-radius:999px;font-size:15px;border:0;cursor:pointer;white-space:nowrap}
+.btn.ghost{background:transparent;box-shadow:inset 0 0 0 1.5px #fff}
+.hero{position:relative;height:min(88vh,860px);min-height:520px;overflow:hidden}
+.hero img{width:100%;height:100%;object-fit:cover;object-position:center 60%;transform:scale(1.06);animation:zoom 2.4s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,15,17,.15) 40%,rgba(14,15,17,.95))}
+.hero .txt{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 clamp(16px,4vw,48px) 48px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.marca{color:var(--mut);font-size:15px;text-transform:uppercase;letter-spacing:.2em;margin-bottom:8px}
+.hero h1{font-size:clamp(36px,6vw,72px)}
+.preco{text-align:right}
+.preco b{display:block;font-family:Sora;font-size:clamp(32px,5vw,56px);color:#fff}
+.preco span{color:var(--mut);font-size:14px}
+section{padding:clamp(40px,6vw,80px) clamp(16px,4vw,48px);max-width:1280px;margin:0 auto}
+h2{font-size:clamp(26px,3.4vw,40px);margin-bottom:24px}
+.specs{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.spec{background:var(--bg2);padding:20px}
+.spec small{display:block;color:var(--mut);font-size:13px;margin-bottom:4px}
+.spec b{font-family:Sora;font-size:20px;font-weight:600}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.gal button{border:0;padding:0;background:none;cursor:zoom-in;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
+.gal button.big{grid-column:span 2;grid-row:span 2}
+.gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
+.gal button:hover img{transform:scale(1.04)}
+.nota{color:var(--mut);font-size:13px;margin-top:12px}
+.ba{position:relative;aspect-ratio:4/3;max-height:720px;border-radius:16px;overflow:hidden;user-select:none;margin:0 auto;width:100%}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .after{clip-path:inset(0 0 0 50%)}
+.ba .bar{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;transform:translateX(-50%);pointer-events:none}
+.ba .bar::after{content:"⇆";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:44px;height:44px;border-radius:50%;background:#fff;color:#111;display:grid;place-items:center;font-size:20px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize}
+.tag{position:absolute;top:14px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;background:rgba(0,0,0,.6)}
+.tag.l{left:14px}.tag.r{right:14px;background:var(--red)}
+.equip{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
+.equip h3{font-size:16px;color:var(--mut);font-family:Inter;font-weight:600;margin-bottom:10px}
+.equip li{list-style:none;padding:6px 0;border-bottom:1px solid var(--line)}
+.contacto{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:clamp(24px,4vw,48px);display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center}
+.contacto p{color:var(--mut)}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.dados p{padding:6px 0}
+.dados b{color:var(--ink)}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:32px 16px 96px;border-top:1px solid var(--line)}
+.wa{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.94);display:none;align-items:center;justify-content:center}
+.lb.on{display:flex}
+.lb img{max-width:94vw;max-height:86vh;border-radius:8px}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:52px;height:52px;border-radius:50%;font-size:24px;cursor:pointer}
+.lb .x{top:16px;right:16px}.lb .p{left:16px;top:50%}.lb .n{right:16px;top:50%}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:760px){.gal{grid-template-columns:1fr 1fr}.contacto{grid-template-columns:1fr}.preco{text-align:left}header .btn{padding:10px 14px;font-size:14px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="demo">Demonstração preparada pela Aspeto para o Stand Principal · não é o site oficial</div>
+<header>
+  <div class="logo"><img src="https://multidealer.easysite.pt/assets/img/standprincipal.pt/logo" alt="Stand Principal"></div>
+  <a class="btn" href="https://wa.me/351937455631?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Audi%20A1%201.6%20TDi%20S-line">Falar no WhatsApp</a>
+</header>
+
+<div class="hero">
+  <img src="frente34.jpg" alt="Audi A1 1.6 TDi S-line branco, vista frontal em estúdio">
+  <div class="txt">
+    <div><p class="marca">Audi</p><h1>A1 1.6 TDi S-line</h1></div>
+    <div class="preco"><b>8 500 €</b><span>ou desde 128,16 €/mês*</span></div>
+  </div>
+</div>
+
+<section class="reveal">
+  <h2>Características</h2>
+  <div class="specs">
+    <div class="spec"><small>Registo</small><b>Mar. 2011</b></div>
+    <div class="spec"><small>Quilómetros</small><b>236 173 km</b></div>
+    <div class="spec"><small>Combustível</small><b>Gasóleo</b></div>
+    <div class="spec"><small>Potência</small><b>90 cv</b></div>
+    <div class="spec"><small>Cilindrada</small><b>1598 cc</b></div>
+    <div class="spec"><small>Caixa</small><b>Manual, 5 vel.</b></div>
+    <div class="spec"><small>Cor</small><b>Branco</b></div>
+    <div class="spec"><small>Portas / lugares</small><b>3 / 4</b></div>
+    <div class="spec"><small>Segunda chave</small><b>Sim</b></div>
+    <div class="spec"><small>Garantia</small><b>Sim</b></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Galeria</h2>
+  <div class="gal" id="gal">
+    <button class="big" data-i="0"><img src="frente34.jpg" alt="Vista frontal três quartos" loading="lazy"></button>
+    <button data-i="1"><img src="lado.jpg" alt="Perfil lateral" loading="lazy"></button>
+    <button data-i="2"><img src="traseira34.jpg" alt="Traseira três quartos" loading="lazy"></button>
+    <button data-i="3"><img src="frente.jpg" alt="Frente" loading="lazy"></button>
+    <button data-i="4"><img src="traseira.jpg" alt="Traseira" loading="lazy"></button>
+    <button data-i="5"><img src="jante.jpg" alt="Jante de liga leve" loading="lazy"></button>
+    <button data-i="6"><img src="interior.jpg" alt="Interior com bancos em pele" loading="lazy"></button>
+    <button class="big" data-i="7"><img src="tablier.jpg" alt="Volante e painel de instrumentos" loading="lazy"></button>
+  </div>
+  <p class="nota">Imagens de estúdio criadas a partir das fotografias reais desta viatura, sem alterar o seu estado.</p>
+</section>
+
+<section class="reveal">
+  <h2>Antes e depois</h2>
+  <div class="ba" id="ba">
+    <img src="https://cdn.easysite.pt/pub/16548/1716745/API_NCAUTO_17897454702270-0.webp" alt="Fotografia original no parque">
+    <img class="after" src="frente34.jpg" alt="Mesma viatura com tratamento de estúdio">
+    <span class="tag l">Foto atual</span><span class="tag r">Com a Aspeto</span>
+    <div class="bar"></div>
+    <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+  </div>
+</section>
+
+<section class="reveal">
+  <h2>Equipamento</h2>
+  <div class="equip">
+    <div><h3>Segurança e desempenho</h3><ul><li>ABS</li><li>Airbags frontais e laterais</li><li>Cruise control</li><li>ISOFIX</li><li>Sensor de estacionamento traseiro</li><li>Sensores de chuva e de luzes</li></ul></div>
+    <div><h3>Conforto e multimédia</h3><ul><li>GPS</li><li>Bluetooth</li><li>Entrada USB</li><li>Computador de bordo</li><li>Fecho central</li></ul></div>
+    <div><h3>Exterior</h3><ul><li>Jantes de liga leve</li><li>Retrovisores com anti-encandeamento</li><li>Pack S-line</li></ul></div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="contacto">
+    <div>
+      <h2>Venha ver o A1 ao vivo</h2>
+      <p>A viatura está no stand, em Cacia, Aveiro. Marque a sua visita ou peça mais informações.</p>
+      <div class="acts">
+        <a class="btn" href="https://wa.me/351937455631?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20Audi%20A1%201.6%20TDi%20S-line">WhatsApp · Pedro Raimundo</a>
+        <a class="btn ghost" href="tel:+351234918029">Ligar 234 918 029</a>
+      </div>
+    </div>
+    <div class="dados">
+      <p><b>Stand Principal</b><br>Avenida Europa nº 384, 3800-533 Cacia</p>
+      <p>Telemóvel: <b>937 455 631</b></p>
+      <p>Email: <b>geral@standprincipal.pt</b></p>
+    </div>
+  </div>
+  <p class="nota">*Valor de financiamento indicado no anúncio original; condições a confirmar junto do stand.</p>
+</section>
+
+<footer>Demonstração preparada pela Aspeto para o Stand Principal. Dados retirados do anúncio público da viatura.</footer>
+
+<a class="wa" href="https://wa.me/351937455631" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .3-3.4-.7-2.9-1.2-4.7-4.1-4.8-4.3-.1-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.4.1.1.1.7-.2 1.4Z"/></svg></a>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true"><img alt=""><button class="x" aria-label="Fechar">×</button><button class="p" aria-label="Anterior">‹</button><button class="n" aria-label="Seguinte">›</button></div>
+
+<script>
+{
+const imgs=[...document.querySelectorAll('#gal img')];const lb=document.getElementById('lb');const li=lb.querySelector('img');let k=0;
+const show=i=>{k=(i+imgs.length)%imgs.length;li.src=imgs[k].src;li.alt=imgs[k].alt;lb.classList.add('on')};
+document.querySelectorAll('#gal button').forEach(b=>b.addEventListener('click',()=>show(+b.dataset.i)));
+lb.querySelector('.x').onclick=()=>lb.classList.remove('on');
+lb.querySelector('.p').onclick=()=>show(k-1);lb.querySelector('.n').onclick=()=>show(k+1);
+lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('on')});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')show(k-1);if(e.key==='ArrowRight')show(k+1)});
+const ba=document.getElementById('ba');const r=ba.querySelector('input');const a=ba.querySelector('.after');const bar=ba.querySelector('.bar');
+r.addEventListener('input',()=>{a.style.clipPath='inset(0 0 0 '+r.value+'%)';bar.style.left=r.value+'%'});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(s=>io.observe(s));
+}
+</script>
+</body>
+</html>
