@@ -27,7 +27,7 @@ header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-
 .hero .txt{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 clamp(16px,4vw,48px) 48px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
 .marca{color:var(--mut);font-size:15px;text-transform:uppercase;letter-spacing:.2em;margin-bottom:8px}
 .hero h1{font-size:clamp(36px,6vw,72px)}
-.preco{text-align:right}
+.preco{text-align:right;padding-right:72px}
 .preco b{display:block;font-family:Sora;font-size:clamp(32px,5vw,56px);color:#fff}
 .preco span{color:var(--mut);font-size:14px}
 section{padding:clamp(40px,6vw,80px) clamp(16px,4vw,48px);max-width:1280px;margin:0 auto}
@@ -39,6 +39,7 @@ h2{font-size:clamp(26px,3.4vw,40px);margin-bottom:24px}
 .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .gal button{border:0;padding:0;background:none;cursor:zoom-in;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
 .gal button.big{grid-column:span 2;grid-row:span 2}
+.gal button.wide{grid-column:span 2;aspect-ratio:auto}
 .gal img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
 .gal button:hover img{transform:scale(1.04)}
 .nota{color:var(--mut);font-size:13px;margin-top:12px}
@@ -50,6 +51,11 @@ h2{font-size:clamp(26px,3.4vw,40px);margin-bottom:24px}
 .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize}
 .tag{position:absolute;top:14px;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:600;background:rgba(0,0,0,.6)}
 .tag.l{left:14px}.tag.r{right:14px;background:var(--red)}
+.ab{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ab figure{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:4/3}
+.ab img{width:100%;height:100%;object-fit:cover;display:block}
+.ab figcaption{position:absolute;top:14px;left:14px;padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600;background:rgba(0,0,0,.65)}
+.ab figcaption.novo{background:var(--red)}
 .equip{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
 .equip h3{font-size:16px;color:var(--mut);font-family:Inter;font-weight:600;margin-bottom:10px}
 .equip li{list-style:none;padding:6px 0;border-bottom:1px solid var(--line)}
@@ -67,7 +73,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:32px 16px 96px;
 .lb .x{top:16px;right:16px}.lb .p{left:16px;top:50%}.lb .n{right:16px;top:50%}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
 .reveal.in{opacity:1;transform:none}
-@media(max-width:760px){.gal{grid-template-columns:1fr 1fr}.contacto{grid-template-columns:1fr}.preco{text-align:left}header .btn{padding:10px 14px;font-size:14px}}
+@media(max-width:760px){.gal{grid-template-columns:1fr 1fr}.ab{grid-template-columns:1fr}.preco{padding-right:0}.contacto{grid-template-columns:1fr}.preco{text-align:left}header .btn{padding:10px 14px;font-size:14px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
@@ -111,20 +117,17 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:32px 16px 96px;
     <button data-i="3"><img src="frente.jpg" alt="Frente" loading="lazy"></button>
     <button data-i="4"><img src="traseira.jpg" alt="Traseira" loading="lazy"></button>
     <button data-i="5"><img src="jante.jpg" alt="Jante de liga leve" loading="lazy"></button>
-    <button data-i="6"><img src="interior.jpg" alt="Interior com bancos em pele" loading="lazy"></button>
-    <button class="big" data-i="7"><img src="tablier.jpg" alt="Volante e painel de instrumentos" loading="lazy"></button>
+    <button class="wide" data-i="6"><img src="interior.jpg" alt="Interior com bancos em pele" loading="lazy"></button>
+    <button data-i="7"><img src="tablier.jpg" alt="Volante e painel de instrumentos" loading="lazy"></button>
   </div>
   <p class="nota">Imagens de estúdio criadas a partir das fotografias reais desta viatura, sem alterar o seu estado.</p>
 </section>
 
 <section class="reveal">
   <h2>Antes e depois</h2>
-  <div class="ba" id="ba">
-    <img src="https://cdn.easysite.pt/pub/16548/1716745/API_NCAUTO_17897454702270-0.webp" alt="Fotografia original no parque">
-    <img class="after" src="frente34.jpg" alt="Mesma viatura com tratamento de estúdio">
-    <span class="tag l">Foto atual</span><span class="tag r">Com a Aspeto</span>
-    <div class="bar"></div>
-    <input type="range" min="0" max="100" value="50" aria-label="Comparar antes e depois">
+  <div class="ab">
+    <figure><img src="https://cdn.easysite.pt/pub/16548/1716745/API_NCAUTO_17897454702270-0.webp" alt="Fotografia original no parque" loading="lazy"><figcaption>Foto atual do anúncio</figcaption></figure>
+    <figure><img src="frente34.jpg" alt="Mesma viatura com tratamento de estúdio" loading="lazy"><figcaption class="novo">Com a Aspeto</figcaption></figure>
   </div>
 </section>
 
@@ -171,8 +174,6 @@ lb.querySelector('.x').onclick=()=>lb.classList.remove('on');
 lb.querySelector('.p').onclick=()=>show(k-1);lb.querySelector('.n').onclick=()=>show(k+1);
 lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('on')});
 document.addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')show(k-1);if(e.key==='ArrowRight')show(k+1)});
-const ba=document.getElementById('ba');const r=ba.querySelector('input');const a=ba.querySelector('.after');const bar=ba.querySelector('.bar');
-r.addEventListener('input',()=>{a.style.clipPath='inset(0 0 0 '+r.value+'%)';bar.style.left=r.value+'%'});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(s=>io.observe(s));
 }
