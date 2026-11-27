@@ -7,100 +7,144 @@
 <meta name="theme-color" content="#0A0B0D">
 <title>Your Range Rover Evoque, with Aspeto</title>
 <meta property="og:title" content="Your Range Rover Evoque, shot like a studio">
-<meta property="og:description" content="Tap to see your car before and after Aspeto.">
+<meta property="og:description" content="Tap to switch the studio lights on and see your car with Aspeto.">
 <meta property="og:image" content="https://provrsferreira-ops.github.io/demos/aspeto-car-dealers/d/gr_aspeto.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="gr_after.jpg">
+<link rel="preload" as="image" href="gr_before.jpg">
 <style>
-:root{--bg:#0A0B0D;--bg2:#131519;--line:#272A31;--ink:#F4F4F2;--mut:#A0A4AB;--red:#E0302F;--red2:#FF5A3C;--wa:#25D366}
+:root{--bg:#0A0B0D;--bg2:#131519;--bg3:#1B1E23;--line:#272A31;--ink:#F4F4F2;--mut:#A0A4AB;--red:#E0302F;--red2:#FF5A3C;--gold:#F5C451;--wa:#25D366}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased}
-.wrap{max-width:560px;margin:0 auto;padding:18px 16px 40px}
-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+html{-webkit-tap-highlight-color:transparent}
+body{background:var(--bg);color:var(--ink);font:16px/1.5 Inter,system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:-20% -20% auto;height:70vh;z-index:-1;background:radial-gradient(50% 50% at 50% 0%,rgba(224,48,47,.18),transparent 70%)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+h1,h2,h3{font-family:Sora,Inter,sans-serif;letter-spacing:-.025em;line-height:1.05}
+.grad{background:linear-gradient(90deg,var(--red),var(--red2) 55%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.wrap{max-width:560px;margin:0 auto;padding:18px 16px 120px}
+header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;opacity:0;animation:up .8s .1s forwards}
 header img{height:22px}
-header span{font-size:12px;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:4px 10px}
-h1{font-size:26px;line-height:1.1;letter-spacing:-.02em;margin-bottom:6px}
-.sub{color:var(--mut);font-size:15px;margin-bottom:16px}
+header span{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:5px 11px}
+header span::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red2);animation:pulse 1.4s infinite}
+@keyframes pulse{50%{opacity:.3}}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--red2);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:10px;opacity:0;animation:up .8s .25s forwards}
+.eyebrow::before{content:"";width:20px;height:1.5px;background:currentColor}
+h1{font-size:clamp(32px,9vw,44px);margin-bottom:8px;opacity:0;animation:up .9s .35s forwards}
+.sub{color:var(--mut);font-size:15px;margin-bottom:18px;opacity:0;animation:up .9s .5s forwards}
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 
-.stage{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:4/3;background:#000;border:1px solid var(--line);box-shadow:0 30px 60px rgba(0,0,0,.5)}
-.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .7s ease,transform 1.1s ease,filter .7s}
-.stage .after{opacity:0;transform:scale(1.05)}
-.on .stage .after{opacity:1;transform:none}
-.on .stage .before{opacity:0;filter:blur(6px)}
+.frame{position:relative;border-radius:26px;padding:2px;background:var(--line);opacity:0;animation:up 1s .6s forwards}
+.on .frame{background:conic-gradient(from var(--a),var(--red),var(--gold),var(--red2),#3a1010,var(--red));animation:up 1s .6s forwards,spin 5s linear infinite}
+@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes spin{to{--a:360deg}}
+.frame::after{content:"";position:absolute;inset:-24px;z-index:-1;border-radius:40px;background:radial-gradient(60% 60% at 50% 50%,rgba(224,48,47,.35),transparent 70%);opacity:0;transition:opacity 1s;filter:blur(10px)}
+.on .frame::after{opacity:1}
+.stage{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3;background:#000;cursor:pointer;user-select:none}
+.stage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.stage .before{transition:opacity .5s,filter .6s}
+.stage .after{opacity:0;transform:scale(1.06)}
+.on .stage .before{opacity:0;filter:blur(8px)}
+.on .stage .after{animation:lights 1.6s ease-out forwards}
+@keyframes lights{0%{opacity:1;filter:brightness(.05);transform:scale(1.06)}12%{filter:brightness(.05)}17%{filter:brightness(1.1)}22%{filter:brightness(.2)}30%{filter:brightness(1.15)}36%{filter:brightness(.55)}100%{opacity:1;filter:brightness(1);transform:scale(1)}}
+.stage::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.45),transparent 30%);pointer-events:none}
+
+.eye{position:absolute;top:12px;left:12px;z-index:4;display:flex;align-items:center;gap:7px;background:rgba(10,11,13,.7);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:7px 13px 7px 9px;font:800 16px Sora,Inter,sans-serif;transition:background .5s,box-shadow .5s}
+.eye svg{width:20px;height:20px}
+.eye small{font:500 12px Inter,sans-serif;color:#C9CCD1}
+.on .eye{background:linear-gradient(135deg,var(--red),var(--red2));border-color:transparent;box-shadow:0 8px 24px rgba(224,48,47,.5)}
+.on .eye small{color:#fff}
+.bump{animation:bump .4s}
+@keyframes bump{50%{transform:scale(1.15)}}
+.plus{position:absolute;z-index:5;font:800 13px Sora,sans-serif;color:#fff;background:rgba(224,48,47,.85);border-radius:999px;padding:2px 8px;pointer-events:none;animation:float 1.3s ease-out forwards}
+@keyframes float{0%{opacity:0;transform:translateY(0) scale(.7)}15%{opacity:1;transform:translateY(-6px) scale(1)}100%{opacity:0;transform:translateY(-70px) scale(.9)}}
+.tag{position:absolute;top:12px;right:12px;z-index:4;font-size:12px;font-weight:700;padding:6px 11px;border-radius:999px;background:rgba(0,0,0,.65);backdrop-filter:blur(6px);transition:background .4s,color .4s}
+.on .tag{background:#fff;color:#111}
+.tap{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);z-index:4;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;background:rgba(10,11,13,.75);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:8px 14px;white-space:nowrap;transition:opacity .4s}
+.tap i{width:10px;height:10px;border-radius:50%;background:var(--red2);box-shadow:0 0 0 0 rgba(255,90,60,.7);animation:ring 1.4s infinite}
+@keyframes ring{70%{box-shadow:0 0 0 12px rgba(255,90,60,0)}100%{box-shadow:0 0 0 0 rgba(255,90,60,0)}}
+.used .tap{opacity:0;pointer-events:none}
 .flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none;z-index:3}
 .flashing .flash{animation:fl .5s ease-out}
-@keyframes fl{0%{opacity:.75}100%{opacity:0}}
+@keyframes fl{0%{opacity:.8}100%{opacity:0}}
 
-.eye{position:absolute;top:12px;left:12px;z-index:4;display:flex;align-items:center;gap:8px;background:rgba(10,11,13,.72);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:7px 12px 7px 9px;font-weight:700;font-size:15px;transition:background .4s,border-color .4s}
-.eye svg{width:20px;height:20px}
-.eye small{font-weight:500;color:#C9CCD1;font-size:12px}
-.on .eye{background:rgba(224,48,47,.9);border-color:transparent}
-.on .eye small{color:#fff}
-.eye.bump{animation:bump .35s}
-@keyframes bump{50%{transform:scale(1.12)}}
-.tag{position:absolute;top:12px;right:12px;z-index:4;font-size:12px;font-weight:700;padding:6px 11px;border-radius:999px;background:rgba(0,0,0,.65)}
-.on .tag{background:#fff;color:#111}
+.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:5px;margin-top:14px;position:relative;opacity:0;animation:up .9s .8s forwards}
+.seg button{position:relative;z-index:1;border:0;background:none;color:var(--mut);font:700 15px Inter,system-ui,sans-serif;padding:14px 8px;border-radius:999px;cursor:pointer;transition:color .3s}
+.seg .pill{position:absolute;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);border-radius:999px;background:#33363d;transition:transform .5s cubic-bezier(.3,1.35,.5,1),background .3s,box-shadow .3s}
+.on .seg .pill{transform:translateX(100%);background:linear-gradient(135deg,var(--red),var(--red2));box-shadow:0 8px 24px rgba(224,48,47,.45)}
+.seg button.act{color:#fff}
 
-.inbox{margin-top:12px;background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:12px 12px 6px;transition:border-color .4s}
-.on .inbox{border-color:rgba(37,211,102,.45)}
+.inbox{margin-top:12px;background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:13px 13px 8px;transition:border-color .4s,box-shadow .4s;opacity:0;animation:up .9s .95s forwards}
+.on .inbox{border-color:rgba(37,211,102,.45);box-shadow:0 0 40px rgba(37,211,102,.08)}
 .ihead{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:700;color:#C9CCD1;margin-bottom:8px}
 .ihead span{display:flex;align-items:center;gap:6px}.ihead svg{color:var(--wa)}
-.ihead em{font-style:normal;font-size:12px;padding:3px 9px;border-radius:999px;background:#2a2d33;color:var(--mut);transition:background .3s,color .3s}
+.ihead em{font-style:normal;font-size:12px;padding:3px 10px;border-radius:999px;background:#2a2d33;color:var(--mut);transition:background .3s,color .3s}
 .on .ihead em{background:var(--wa);color:#05210f}
-.empty{color:#6E727A;font-size:13px;padding:6px 2px 10px}
+.empty{color:#6E727A;font-size:13px;padding:4px 2px 10px}
 .on .empty{display:none}
-.msgs{display:flex;flex-direction:column;gap:6px;padding-bottom:6px}
-.msgs:empty{display:none}
-.msg{display:none;gap:8px;align-items:flex-start;max-width:92%;background:#fff;color:#111;border-radius:14px 14px 14px 4px;padding:7px 10px;font-size:13px;line-height:1.3;box-shadow:0 8px 20px rgba(0,0,0,.35);opacity:0;transform:translateY(14px) scale(.96);transition:opacity .35s,transform .35s cubic-bezier(.2,1.4,.4,1)}
-.on .msg{display:flex}.msg.show{opacity:1;transform:none}
-.msg i{flex:0 0 22px;height:22px;border-radius:50%;background:var(--wa);display:grid;place-items:center;font-style:normal;color:#fff;font-size:11px;font-weight:700}
-.msg b{display:block;font-size:11px;color:#667}
+.msgs{display:flex;flex-direction:column;gap:7px;padding-bottom:6px}
+.typing,.msg{display:none}
+.on .typing.show,.on .msg.show{display:flex}
+.typing{align-items:center;gap:8px;color:var(--mut);font-size:12px;padding:2px 4px}
+.typing span{display:flex;gap:3px;background:#fff;border-radius:12px;padding:8px 10px}
+.typing span b{width:6px;height:6px;border-radius:50%;background:#99a;animation:dot 1s infinite}
+.typing span b:nth-child(2){animation-delay:.15s}.typing span b:nth-child(3){animation-delay:.3s}
+@keyframes dot{40%{transform:translateY(-4px);background:#556}}
+.msg{gap:9px;align-items:flex-start;max-width:94%;background:#fff;color:#111;border-radius:16px 16px 16px 5px;padding:8px 11px;font-size:14px;line-height:1.3;box-shadow:0 10px 24px rgba(0,0,0,.35);animation:pop .45s cubic-bezier(.2,1.5,.4,1)}
+@keyframes pop{from{opacity:0;transform:translateY(12px) scale(.94)}to{opacity:1;transform:none}}
+.msg i{flex:0 0 24px;height:24px;border-radius:50%;display:grid;place-items:center;font-style:normal;color:#fff;font-size:11px;font-weight:800}
+.msg[data-i="0"] i{background:#25D366}.msg[data-i="1"] i{background:#3B82F6}.msg[data-i="2"] i{background:#A855F7}
+.msg b{display:block;font-size:11px;color:#778}
+.note{color:#6E727A;font-size:11px;margin-top:8px;text-align:center}
 
-.seg{display:grid;grid-template-columns:1fr 1fr;background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:5px;margin-top:14px;position:relative}
-.seg button{position:relative;z-index:1;border:0;background:none;color:var(--mut);font:700 15px Inter,system-ui,sans-serif;padding:13px 8px;border-radius:999px;cursor:pointer;transition:color .3s}
-.seg .pill{position:absolute;top:5px;bottom:5px;left:5px;width:calc(50% - 5px);border-radius:999px;background:#33363d;transition:transform .45s cubic-bezier(.3,1.3,.5,1),background .3s}
-.on .seg .pill{transform:translateX(100%);background:linear-gradient(135deg,var(--red),var(--red2))}
-.seg button.act{color:#fff}
-.hint{text-align:center;color:var(--mut);font-size:13px;margin-top:10px}
-.hint.pulse{animation:pulse 1.6s infinite}
-@keyframes pulse{50%{opacity:.4}}
-
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
-.stat{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:14px}
-.stat b{display:block;font-size:19px;letter-spacing:-.02em}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:26px}
+.stat{position:relative;overflow:hidden;background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:16px}
+.stat::before{content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;border-radius:50%;background:radial-gradient(circle,rgba(224,48,47,.25),transparent 70%)}
+.stat .ic{font-size:22px;margin-bottom:8px}
+.stat b{display:block;font:800 18px Sora,sans-serif;margin-bottom:4px}
 .stat span{color:var(--mut);font-size:13px}
-.stat.up b{color:var(--red2)}
-.note{color:#6E727A;font-size:11px;margin-top:8px}
-
-.why{margin-top:26px}
-.why h2{font-size:21px;margin-bottom:12px;letter-spacing:-.01em}
-.why li{list-style:none;display:flex;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;color:#D6D8DC}
-.why li::before{content:"✓";color:var(--red2);font-weight:800}
-
-.cta{margin-top:24px;background:radial-gradient(120% 120% at 50% 0%,#2a1414,var(--bg2) 60%);border:1px solid var(--line);border-radius:22px;padding:22px;text-align:center}
-.cta h3{font-size:20px;margin-bottom:6px}
-.cta p{color:var(--mut);font-size:14px;margin-bottom:16px}
-.btn{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--red),var(--red2));color:#fff;text-decoration:none;font-weight:700;padding:15px;border-radius:999px;font-size:16px;box-shadow:0 10px 30px rgba(224,48,47,.35)}
-.link{display:block;margin-top:12px;color:var(--ink);font-size:14px;font-weight:600}
+.why{margin-top:28px}
+.why h2{font-size:24px;margin-bottom:14px}
+.why ul{list-style:none}
+.why li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;color:#D6D8DC}
+.why li em{flex:0 0 26px;height:26px;border-radius:8px;display:grid;place-items:center;background:rgba(224,48,47,.14);color:var(--red2);font-style:normal;font-weight:800;font-size:13px}
+.cta{position:relative;overflow:hidden;margin-top:28px;border-radius:26px;padding:28px 22px;text-align:center;border:1px solid var(--line);isolation:isolate}
+.cta .bg{position:absolute;inset:0;z-index:-2;background:url(gr_after.jpg) center/cover;filter:brightness(.3) saturate(1.1)}
+.cta::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(90% 90% at 50% 100%,rgba(224,48,47,.4),transparent 70%)}
+.cta h3{font-size:28px;margin-bottom:8px}
+.cta p{color:#C9CCD1;font-size:14px;margin-bottom:18px}
+.btn{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,var(--red),var(--red2));color:#fff;text-decoration:none;font-weight:700;padding:16px;border-radius:999px;font-size:16px;box-shadow:0 12px 30px rgba(224,48,47,.4)}
+.btn::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 3s ease-in-out infinite}
+@keyframes shine{0%,60%{left:-60%}100%{left:130%}}
+.link{display:inline-block;margin-top:14px;color:var(--ink);font-size:14px;font-weight:600;text-decoration:none;border-bottom:1.5px solid var(--red2)}
 footer{text-align:center;color:#6E727A;font-size:11px;margin-top:22px}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.bar{position:fixed;left:12px;right:12px;bottom:max(12px,env(safe-area-inset-bottom));z-index:50;max-width:536px;margin:0 auto;transform:translateY(150%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.bar.show{transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}header,.eyebrow,h1,.sub,.frame,.seg,.inbox,.reveal{opacity:1;transform:none}.on .stage .after{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 <div class="wrap" id="app">
-  <header><img src="../aspeto.png" alt="Aspeto"><span>Demo for your listing</span></header>
-  <h1>Your Range Rover Evoque</h1>
-  <p class="sub">Same car, same condition. Just a better first impression.</p>
+  <header><img src="../aspeto.png" alt="Aspeto"><span>Made for your listing</span></header>
+  <p class="eyebrow">Your car, our studio</p>
+  <h1>Your Range Rover Evoque.<br><span class="grad">Lights on.</span></h1>
+  <p class="sub">Same car, same condition. Just the first impression it deserves.</p>
 
-  <div class="stage" id="stage">
-    <img class="before" src="gr_before.jpg" alt="Your current listing photo of the Range Rover Evoque">
-    <img class="after" src="gr_after.jpg" alt="The same Range Rover Evoque after Aspeto">
-    <div class="flash"></div>
-    <div class="eye" id="eye" aria-live="polite">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
-      <span id="views">9</span><small>views</small>
+  <div class="frame">
+    <div class="stage" id="stage" role="button" aria-label="Switch between your listing photo and the Aspeto version">
+      <img class="before" src="gr_before.jpg" alt="Your current listing photo of the Range Rover Evoque">
+      <img class="after" src="gr_after.jpg" alt="The same Range Rover Evoque after Aspeto">
+      <div class="flash"></div>
+      <div class="eye" id="eye" aria-live="polite">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        <span id="views">9</span><small>views</small>
+      </div>
+      <span class="tag" id="tag">Your listing</span>
+      <span class="tap"><i></i>Tap to turn the studio on</span>
     </div>
-    <span class="tag" id="tag">Your listing</span>
   </div>
 
   <div class="seg" role="group" aria-label="Compare">
@@ -108,57 +152,74 @@ footer{text-align:center;color:#6E727A;font-size:11px;margin-top:22px}
     <button id="bBefore" class="act" aria-pressed="true">Your listing</button>
     <button id="bAfter" aria-pressed="false">With Aspeto ✨</button>
   </div>
+
   <div class="inbox">
     <div class="ihead"><span><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg> Buyer messages</span><em id="cnt">0 new</em></div>
-    <div class="empty" id="empty">Quiet today. Lot photos don't get many clicks.</div>
+    <div class="empty">Quiet today. Lot photos don't get many clicks.</div>
     <div class="msgs" id="msgs">
-      <div class="msg"><i>A</i><div><b>Buyer · just now</b>Hi, is the Range Rover Evoque still available?</div></div>
-      <div class="msg"><i>M</i><div><b>Buyer · just now</b>What's your best price?</div></div>
-      <div class="msg"><i>R</i><div><b>Buyer · just now</b>Can I come and see it today?</div></div>
+      <div class="typing" data-i="0"><span><b></b><b></b><b></b></span>Buyer is typing…</div>
+      <div class="msg" data-i="0"><i>A</i><div><b>Buyer · just now</b>Hi, is the Range Rover Evoque still available?</div></div>
+      <div class="typing" data-i="1"><span><b></b><b></b><b></b></span>Buyer is typing…</div>
+      <div class="msg" data-i="1"><i>M</i><div><b>Buyer · just now</b>What's your best price?</div></div>
+      <div class="typing" data-i="2"><span><b></b><b></b><b></b></span>Buyer is typing…</div>
+      <div class="msg" data-i="2"><i>R</i><div><b>Buyer · just now</b>Can I come and see it today?</div></div>
     </div>
   </div>
-  <p class="hint pulse" id="hint">Tap "With Aspeto" to see the difference</p>
+  <p class="note">Views and messages are an illustration, not data from your listing.</p>
 
-  <div class="stats">
-    <div class="stat up"><b>More views</b><span>A studio photo stands out in a list full of lot photos.</span></div>
-    <div class="stat up"><b>More messages</b><span>Buyers who click, ask. Faster calls, faster sales.</span></div>
+  <div class="stats reveal">
+    <div class="stat"><div class="ic">👁️</div><b>More views</b><span>A studio photo stands out in a list full of lot photos.</span></div>
+    <div class="stat"><div class="ic">💬</div><b>More messages</b><span>Buyers who click, ask. More calls, faster sales.</span></div>
   </div>
-  <p class="note">Views and messages shown are an illustration, not data from your listing.</p>
 
-  <div class="why">
+  <div class="why reveal">
     <h2>What we do for your showroom</h2>
     <ul>
-      <li>Studio-quality photos from the phone photos you already take</li>
-      <li>Every photo checked: same car, same plate, same condition</li>
-      <li>Your logo on every photo, ready for DubiCars, Dubizzle and Instagram</li>
-      <li>Delivered by WhatsApp within 48 hours</li>
+      <li><em>1</em>Studio-quality photos from the phone photos you already take</li>
+      <li><em>2</em>Every photo checked: same car, same plate, same condition</li>
+      <li><em>3</em>Your logo on every photo, ready for DubiCars, Dubizzle and Instagram</li>
+      <li><em>4</em>Delivered by WhatsApp within 48 hours</li>
     </ul>
   </div>
 
-  <div class="cta">
-    <h3>Your next 2 cars are free</h3>
+  <div class="cta reveal" id="cta">
+    <div class="bg"></div>
+    <h3>Your next 2 cars<br><span class="grad">are free.</span></h3>
     <p>Reply to our WhatsApp message with the photos of any 2 cars and see the result on your own listings.</p>
     <a class="btn" href="../#offer">See the full offer →</a>
     <a class="link" href="../">How it works</a>
   </div>
-  <footer>Aspeto · Demo image created from your public listing photo. Not for publication.</footer>
+  <footer>Aspeto · Demo created from your public listing photo. Not for publication.</footer>
 </div>
+<div class="bar" id="bar"><a class="btn" href="../#offer">Get 2 cars free →</a></div>
+
 <script>
 {
-const app=document.getElementById('app'),eye=document.getElementById('eye'),v=document.getElementById('views'),tag=document.getElementById('tag'),hint=document.getElementById('hint');
-const bB=document.getElementById('bBefore'),bA=document.getElementById('bAfter'),msgs=[...document.querySelectorAll('.msg')];
-const LOW=9,HIGH=247;let raf,timers=[];
-function count(to){cancelAnimationFrame(raf);const from=+v.textContent,t0=performance.now(),d=to>from?1400:500;
-  const step=t=>{const p=Math.min(1,(t-t0)/d),e=1-Math.pow(1-p,3);v.textContent=Math.round(from+(to-from)*e);if(p<1)raf=requestAnimationFrame(step);else{eye.classList.remove('bump');void eye.offsetWidth;eye.classList.add('bump')}};raf=requestAnimationFrame(step)}
-function set(on){timers.forEach(clearTimeout);timers=[];
+const app=document.getElementById('app'),eye=document.getElementById('eye'),v=document.getElementById('views'),tag=document.getElementById('tag'),cnt=document.getElementById('cnt');
+const bB=document.getElementById('bBefore'),bA=document.getElementById('bAfter'),stage=document.getElementById('stage');
+const items=[...document.querySelectorAll('#msgs > div')];
+const LOW=9,HIGH=247;let raf,timers=[],plusT;
+function bump(el){el.classList.remove('bump');void el.offsetWidth;el.classList.add('bump')}
+function plus(){const p=document.createElement('span');p.className='plus';p.textContent='+'+(Math.floor(Math.random()*24)+6);p.style.left=(40+Math.random()*90)+'px';p.style.top='44px';stage.appendChild(p);setTimeout(()=>p.remove(),1300)}
+function count(to){cancelAnimationFrame(raf);clearInterval(plusT);const from=+v.textContent,t0=performance.now(),d=to>from?1900:500;
+  if(to>from)plusT=setInterval(plus,180);
+  const step=t=>{const p=Math.min(1,(t-t0)/d),e=1-Math.pow(1-p,3);v.textContent=Math.round(from+(to-from)*e);if(p<1)raf=requestAnimationFrame(step);else{clearInterval(plusT);bump(eye)}};raf=requestAnimationFrame(step)}
+function set(on){timers.forEach(clearTimeout);timers=[];app.classList.add('used');
   app.classList.toggle('on',on);bB.classList.toggle('act',!on);bA.classList.toggle('act',on);bB.setAttribute('aria-pressed',!on);bA.setAttribute('aria-pressed',on);
-  tag.textContent=on?'With Aspeto':'Your listing';
-  if(on){app.classList.remove('flashing');void app.offsetWidth;app.classList.add('flashing');count(HIGH);hint.classList.remove('pulse');hint.textContent='Tap "Your listing" to compare again';
-    msgs.forEach((m,i)=>timers.push(setTimeout(()=>{m.classList.add('show');document.getElementById('cnt').textContent=(i+1)+' new'},900+i*650)));}
-  else{count(LOW);msgs.forEach(m=>m.classList.remove('show'));document.getElementById('cnt').textContent='0 new';hint.textContent='Tap "With Aspeto" to see the difference'}
+  tag.textContent=on?'With Aspeto':'Your listing';items.forEach(x=>x.classList.remove('show'));
+  if(on){const af=stage.querySelector('.after');af.style.animation='none';void af.offsetWidth;af.style.animation='';
+    timers.push(setTimeout(()=>{app.classList.remove('flashing');void app.offsetWidth;app.classList.add('flashing')},420));
+    timers.push(setTimeout(()=>count(HIGH),500));
+    let t=1300;[0,1,2].forEach(i=>{const ty=items.find(x=>x.classList.contains('typing')&&x.dataset.i==i),m=items.find(x=>x.classList.contains('msg')&&x.dataset.i==i);
+      timers.push(setTimeout(()=>ty.classList.add('show'),t));t+=900;
+      timers.push(setTimeout(()=>{ty.classList.remove('show');m.classList.add('show');cnt.textContent=(i+1)+' new';bump(cnt)},t));t+=350;});
+  }else{count(LOW);cnt.textContent='0 new'}
 }
-bB.onclick=()=>set(false);bA.onclick=()=>set(true);
-document.getElementById('stage').onclick=()=>set(!app.classList.contains('on'));
+bB.onclick=()=>set(false);bA.onclick=()=>set(true);stage.onclick=()=>set(!app.classList.contains('on'));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(s=>io.observe(s));
+const bar=document.getElementById('bar'),cta=document.getElementById('cta');
+const onS=()=>{const r=cta.getBoundingClientRect();bar.classList.toggle('show',scrollY>260&&r.top>innerHeight)};addEventListener('scroll',onS,{passive:true});onS();
 }
 </script>
 </body>
