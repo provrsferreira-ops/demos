@@ -52,6 +52,22 @@ h2{font-size:clamp(28px,3.6vw,44px);margin-bottom:18px}
 .cta .lead{margin:0 auto}
 .cta .acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
 .cta img{height:28px;margin:0 auto 24px;display:block}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;align-items:stretch}
+.plan{background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:30px;display:flex;flex-direction:column}
+.plan.pop{border-color:var(--red);box-shadow:0 0 0 1px var(--red),0 30px 60px rgba(224,48,47,.12);position:relative}
+.plan .badge{position:absolute;top:-13px;left:30px;background:var(--red);color:#fff;font-size:12px;font-weight:600;padding:4px 12px;border-radius:999px}
+.plan h3{font-size:20px;margin-bottom:6px}
+.plan .sub{color:var(--mut);font-size:14px;min-height:42px}
+.plan .price{font-family:Sora;font-size:44px;font-weight:700;margin:18px 0 2px}
+.plan .price small{font-size:16px;color:var(--mut);font-weight:400}
+.plan .per{color:var(--mut);font-size:14px;margin-bottom:20px}
+.plan ul{list-style:none;margin-bottom:26px;flex:1}
+.plan li{padding:8px 0 8px 26px;border-bottom:1px solid var(--line);font-size:15px;position:relative}
+.plan li::before{content:"✓";position:absolute;left:0;color:var(--red);font-weight:700}
+.plan .btn{justify-content:center}
+.free{margin-top:18px;text-align:center;color:var(--mut);font-size:15px}
+.free a{color:var(--ink);font-weight:600}
+@media(max-width:900px){.plans{grid-template-columns:1fr}}
 footer{text-align:center;color:var(--mut);font-size:13px;padding:32px 16px 48px;border-top:1px solid var(--line)}
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}
 .reveal.in{opacity:1;transform:none}
@@ -63,7 +79,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:32px 16px 48px;
 <body>
 <header>
   <img src="aspeto.png" alt="Aspeto">
-  <a class="btn" href="#talk">Get your first 2 cars free</a>
+  <a class="btn" href="#pricing">See pricing</a>
 </header>
 
 <section class="hero">
@@ -71,7 +87,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:32px 16px 48px;
     <p class="eyebrow">Aspeto for car dealers</p>
     <h1>Your cars are already good. <em>Make them look</em> as good as they are.</h1>
     <p class="lead">Send us the photos you already take on the lot. We send back studio-quality photos of the same car, ready for Dubizzle, AutoTrader, Instagram and your website. No studio, no photographer, and the car never leaves the showroom.</p>
-    <div class="acts"><a class="btn" href="#talk">Talk to Aspeto</a><a class="btn ghost" href="#example">See an example</a></div>
+    <div class="acts"><a class="btn" href="#pricing">See pricing</a><a class="btn ghost" href="#example">See an example</a></div>
   </div>
   <div class="img reveal in"><img src="frente34.jpg" alt="Car photographed in a studio setting"></div>
 </section>
@@ -109,7 +125,7 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:32px 16px 48px;
   <h2>Three steps. No change to your routine.</h2>
   <div class="grid3 steps">
     <div class="card"><p class="n">1</p><h3>Shoot as usual</h3><p>Phone photos on the lot: front, sides, rear, wheels and interior.</p></div>
-    <div class="card"><p class="n">2</p><h3>Send them on WhatsApp</h3><p>No new apps, no accounts. Just a chat.</p></div>
+    <div class="card"><p class="n">2</p><h3>Send them to us</h3><p>By WhatsApp or email. No new apps, no accounts to create.</p></div>
     <div class="card"><p class="n">3</p><h3>Get them back ready to post</h3><p>Studio photos with your branding, sized for marketplaces and social media.</p></div>
   </div>
 </section>
@@ -118,17 +134,46 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:32px 16px 48px;
   <div class="honest"><p><b>Honesty first.</b> We only change the background and the lighting, never the car. Same wheels, same plate, same scratches, same mileage. Buyers see exactly the car they will find in your showroom.</p></div>
 </section>
 
+<section class="reveal" id="pricing">
+  <p class="eyebrow">Pricing</p>
+  <h2>Start small. Scale when you see the results.</h2>
+  <p class="lead">Every car includes up to 6 studio photos (exterior angles and interior), each one checked against your original photos before delivery: same car, same plate, same condition. Delivered within 48 hours.</p>
+  <div class="plans">
+    <div class="plan">
+      <h3>Starter Pack</h3><p class="sub">Try it on a few cars from your stock.</p>
+      <p class="price">$149</p><p class="per">5 cars · $30 per car · one-time</p>
+      <ul><li>Up to 6 studio photos per car</li><li>Your dealer branding on every photo</li><li>Every photo checked before delivery</li><li>Delivered within 48 hours</li></ul>
+      <a class="btn ghost" href="STRIPE_PACK5" data-plan="pack5">Buy 5 cars</a>
+    </div>
+    <div class="plan pop">
+      <span class="badge">Best value</span>
+      <h3>Showroom Monthly</h3><p class="sub">For dealers with new stock every week.</p>
+      <p class="price">$399<small>/month</small></p><p class="per">Up to 20 cars a month · $20 per car</p>
+      <ul><li>Everything in the packs</li><li>Listing description rewritten for every car</li><li>Priority delivery within 24 hours</li><li>Exclusive in your area: max. 3 dealers per city</li><li>Cancel anytime</li></ul>
+      <a class="btn" href="STRIPE_MONTHLY" data-plan="monthly">Start monthly plan</a>
+    </div>
+    <div class="plan">
+      <h3>Growth Pack</h3><p class="sub">A bigger batch, a lower price per car.</p>
+      <p class="price">$349</p><p class="per">15 cars · $23 per car · one-time</p>
+      <ul><li>Up to 6 studio photos per car</li><li>Your dealer branding on every photo</li><li>Every photo checked before delivery</li><li>Use them whenever you want</li></ul>
+      <a class="btn ghost" href="STRIPE_PACK15" data-plan="pack15">Buy 15 cars</a>
+    </div>
+  </div>
+  <p class="free">Not sure yet? <a href="#talk">Get your first 2 cars free</a>, no payment needed.</p>
+</section>
+
 <section class="reveal" id="talk">
   <div class="cta">
     <img src="aspeto.png" alt="Aspeto">
-    <h2>Want to see it on your own cars?</h2>
-    <p class="lead">Pick two cars from your stock and we will do them for free, so you can compare the results on your own listings.</p>
-    <div class="acts"><a class="btn" href="mailto:provrsferreira@gmail.com?subject=Aspeto%20for%20car%20dealers">Talk to Aspeto</a></div>
+    <h2>Want to see it on your own cars first?</h2>
+    <p class="lead">Send us the photos of two cars from your stock and we will do them for free, so you can compare the results on your own listings.</p>
+    <div class="acts"><a class="btn" href="mailto:provrsferreira@gmail.com?subject=Free%202%20cars%20%C2%B7%20Aspeto">Get 2 cars free</a><a class="btn ghost" href="#pricing">See pricing</a></div>
   </div>
 </section>
 
 <footer>Aspeto · Studio-quality car photos for dealers. Images created from the real photos of each vehicle.</footer>
 <script>
+document.querySelectorAll('a[data-plan]').forEach(a=>{if(a.getAttribute('href').startsWith('STRIPE')){a.href='mailto:provrsferreira@gmail.com?subject='+encodeURIComponent('Aspeto · '+a.textContent)}});
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(s=>io.observe(s));
 </script>
